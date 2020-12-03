@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import FetchStudentData from "./components/FetchStudentData/FetchStudentData";
 
 ReactDOM.render(
   <React.StrictMode>
+      <FetchStudentData />
     <App />
   </React.StrictMode>,
   document.getElementById('root')
