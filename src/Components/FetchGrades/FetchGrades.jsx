@@ -9,7 +9,7 @@ import React from "react";
 // This is the first attempt and alternatives have not been looked into yet.
 
 
-export default class FetchStudentData extends React.Component {
+export default class FetchGrades extends React.Component {
     state = {
         loading: true,
         grade: null,
