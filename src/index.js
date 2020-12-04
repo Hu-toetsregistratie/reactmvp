@@ -8,7 +8,7 @@ import FetchStudentData from "./components/FetchStudentData/FetchStudentData";
 ReactDOM.render(
   <React.StrictMode>
       <FetchStudentData />
-    <App />
+        <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
