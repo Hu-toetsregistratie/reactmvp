@@ -39,18 +39,19 @@ export default class FetchGrades extends React.Component {
             return <div>loading...</div>
         }
         if (!this.state.grades.length) {
-            return <div>didn't find any grades...</div>
+            return <div>couldn't find any grades...</div>
         }
+
         return (
-        <div>
-            {this.state.grades.map(grade => (
-                <div>
-                    <div> Naam toets/ID van de toets: {grade.toets_naam} </div>
-                    <div> Resultaat: {this.state.result}</div>
-                    <div> Student (die het resultaat heeft behaald): {grade.student} </div>
-                </div>
-            ))}
-        </div>
+            <div>
+                {this.state.grades.map(grade => (
+                    <div>
+                        <div> Naam toets/ID van de toets: {grade.toets_naam} </div>
+                        <div> Resultaat: {this.state.result}</div>
+                        <div> Student (die het resultaat heeft behaald): {grade.student} </div>
+                    </div>
+                ))}
+            </div>
         );
     }
 }

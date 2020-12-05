@@ -11,9 +11,11 @@ import React from "react";
 export default class CountTestResults extends React.Component {
     state = {
         loading: true,
+        test: null,
         countVold: null,
         countOnv: null
     }
+
 
     // Asynchronous fetch call to hu-toetsregistratie.nl/api
     async componentDidMount() {

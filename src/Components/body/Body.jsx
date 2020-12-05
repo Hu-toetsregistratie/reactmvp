@@ -1,18 +1,31 @@
 import React, {Component} from "react";
-import FetchGrades from "../fetchGrades/FetchGrades";
-import Chart from "../chart/Chart";
-import CountTestResults from "../fetchGrades/CountTestResults";
+import FetchGrades from "./fetchGrades/FetchGrades";
+import Chart from "./chart/Chart";
+import CountTestResults from "./amountOfResults/CountTestResults";
+import FetchStudentNames from "./fetchStudentNames/fetchStudentNames";
 
 class Body extends Component {
     constructor(){
         super();
         this.state = {
-            chartData:{}
+            chartData:{},
+            studentData:{},
+            resultData:{},
+
         }
     }
 
     componentWillMount(){
         this.getChartData();
+        this.getStudentData()
+    }
+
+    getStudentData(){
+        this.setState({studentData: {
+            voornaam: 'voornaam',
+            achternaam: 'achternaam',
+            studentennummer: 'studentennummer'
+            }})
     }
 
     getChartData(){
@@ -41,6 +54,9 @@ class Body extends Component {
     render() {
         return(
             <div>
+                {/* WIP: */}
+                <FetchStudentNames />
+
                 {/* WIP: */}
                 <CountTestResults />
 
