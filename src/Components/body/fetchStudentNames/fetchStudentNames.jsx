@@ -9,12 +9,25 @@ import React from "react";
 // @WHY: To show the user the amount of passed and failed grades for a test.
 
 export default class FetchStudentNames extends React.Component {
-    state = {
+    constructor(props) {
+        super(props);
+        this.state = {
+            studentData:props.studentData
+        }
+    }
+    static defaultProps = {
         loading: true,
         givenName: null,
         familyName: null,
         studentId: null
     }
+
+    // state = {
+    //     loading: true,
+    //     givenName: null,
+    //     familyName: null,
+    //     studentId: null
+    // }
 
     // Asynchronous fetch call to hu-toetsregistratie.nl/api
     async componentDidMount() {

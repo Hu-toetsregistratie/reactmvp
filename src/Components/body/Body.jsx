@@ -2,7 +2,8 @@ import React, {Component} from "react";
 import FetchGrades from "./fetchGrades/FetchGrades";
 import Chart from "./chart/Chart";
 import CountTestResults from "./amountOfResults/CountTestResults";
-import FetchStudentNames from "./fetchStudentNames/fetchStudentNames";
+import FetchStudentNames from "./fetchStudentNames/FetchStudentNames";
+import FetchTests from "./fetchTests/FetchTests";
 
 class Body extends Component {
     constructor(){
@@ -56,6 +57,9 @@ class Body extends Component {
             <div>
                 {/* WIP: */}
                 <FetchStudentNames />
+
+                {/* WIP: */}
+                <FetchTests />
 
                 {/* WIP: */}
                 <CountTestResults />
