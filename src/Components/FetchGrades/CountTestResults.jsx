@@ -1,7 +1,12 @@
 import React from "react";
 
-//TODO: Formatting json data
 
+//TODO:
+// Make a component with a variable 'toets_code' so that this component can be used to get all the results of every test.
+// Split the fetch to a general component that fetches the passed and failed results based on parameter input.
+
+// @WHAT: A component that fetches the data from test with id=1 and renders two lines of text with the amount of passed- and failed grades.
+// @WHY: To show the user the amount of passed and failed grades for a test.
 
 export default class CountTestResults extends React.Component {
     state = {
@@ -16,7 +21,7 @@ export default class CountTestResults extends React.Component {
         const responsePassed = await fetch(urlPassed);
         const dataPassed = await responsePassed.json();
         const countPassed = Object.keys(dataPassed).length
-        console.log(countPassed)
+        console.log("Het aantal voldoendes is: " + countPassed)
 
         this.setState({countVold: countPassed})
 
@@ -25,8 +30,8 @@ export default class CountTestResults extends React.Component {
         const responseFailed = await fetch(urlFailed);
         const dataFailed = await responseFailed.json();
         const countFailed = Object.keys(dataFailed).length
-        console.log(countFailed)
-        this.setState({countOnv: countFailed})
+        console.log("Het aantal onvoldoendes is: " + countFailed)
+        this.setState({countOnv: countFailed, loading: false})
     }
 
     render() {
@@ -44,7 +49,7 @@ export default class CountTestResults extends React.Component {
         }
         return (
             <div>
-                <div> Aantal voldoendes: {this.state.countVold}</div>
+                <div> Aantal Voldoendes: {this.state.countVold}</div>
                 <div> Aantal Onvoldoendes: {this.state.countOnv}</div>
             </div>
         );

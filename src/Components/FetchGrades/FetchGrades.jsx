@@ -1,10 +1,8 @@
 import React from "react";
 
-//TODO: Formatting json data
-// @WHY
-// Current data cannot be parsed properly by chartjs charts.
-// @WHAT:
-// Code that makes sure to fetch+format the data correctly for use by the chartjs charts.
+//TODO: Make it look nice and user-friendly....
+// @WHY: WIP
+// @WHAT: Fetches all the results from all the tests of every student and renders it in a couple of divs with text.
 // @ALTERNATIVES:
 // This is the first attempt and alternatives have not been looked into yet.
 
@@ -28,8 +26,7 @@ export default class FetchGrades extends React.Component {
         // An 'if' check for the value of the voldoende attribute (datatype: boolean).
         // @WHY
         // So that the (invisible) result isn't 'true' or 'false' but a visible string.
-        // @ALTERNATIVES
-        // ????
+
         if (data[0].voldoende) {
             this.setState({result: 'Voldoende'});
         } else {
@@ -53,7 +50,6 @@ export default class FetchGrades extends React.Component {
                     <div> Student (die het resultaat heeft behaald): {grade.student} </div>
                 </div>
             ))}
-
         </div>
         );
     }

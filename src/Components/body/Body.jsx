@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import FetchGrades from "../fetchGrades/FetchGrades";
 import Chart from "../chart/Chart";
+import CountTestResults from "../fetchGrades/CountTestResults";
 
 class Body extends Component {
     constructor(){
@@ -40,9 +41,14 @@ class Body extends Component {
     render() {
         return(
             <div>
-            <FetchGrades />
+                {/* WIP: */}
+                <CountTestResults />
 
-            <Chart chartData={this.state.chartData} location="the US of A" legendPosition="bottom"/>
+                {/* WIP: */}
+                <FetchGrades />
+
+                {/* WIP: All the data is defined in the constructor method located in the body-component. */}
+                <Chart chartData={this.state.chartData} location="the US of A" legendPosition="bottom"/>
             </div>
         )
     }
