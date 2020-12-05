@@ -12,17 +12,17 @@ import React from "react";
 export default class FetchGrades extends React.Component {
     state = {
         loading: true,
-        grade: null,
+        grades: [],
         result: null
     }
 
     // Asynchronous fetch call to hu-toetsregistratie.nl/api
     async componentDidMount() {
-        const url = "https://hu-toetsregistratie.nl/api/cijferid/?toets_code=1";
+        const url = "https://hu-toetsregistratie.nl/api/cijferid.json";
         const response = await fetch(url);
         const data = await response.json();
 
-        this.setState({grade: data[0], loading: false})
+        this.setState({grades: data, loading: false})
 
         // @WHAT
         // An 'if' check for the value of the voldoende attribute (datatype: boolean).
@@ -41,16 +41,19 @@ export default class FetchGrades extends React.Component {
         if (this.state.loading) {
             return <div>loading...</div>
         }
-        if (!this.state.grade) {
+        if (!this.state.grades.length) {
             return <div>didn't find any grades...</div>
         }
         return (
         <div>
-            <div> Naam toets/ID van de toets: {this.state.grade.toets_naam} </div>
+            {this.state.grades.map(grade => (
+                <div>
+                    <div> Naam toets/ID van de toets: {grade.toets_naam} </div>
+                    <div> Resultaat: {this.state.result}</div>
+                    <div> Student (die het resultaat heeft behaald): {grade.student} </div>
+                </div>
+            ))}
 
-            <div> Resultaat: {this.state.result}</div>
-
-            <div> Student (die het resultaat heeft behaald): {this.state.grade.student} </div>
         </div>
         );
     }
