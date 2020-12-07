@@ -1,9 +1,10 @@
 import React, {Component} from "react";
-import FetchGrades from "./fetchGrades/FetchGrades";
+// import FetchGrades from "./fetchGrades/FetchGrades";
 import Chart from "./chart/Chart";
-import CountTestResults from "./amountOfResults/CountTestResults";
+// import CountTestResults from "./input/selectTest/amountOfResults/CountTestResults";
 import FetchStudentNames from "./fetchStudentNames/FetchStudentNames";
 import FetchTests from "./fetchTests/FetchTests";
+import { Alert } from "@instructure/ui-alerts";
 
 class Body extends Component {
     constructor(){
@@ -55,19 +56,49 @@ class Body extends Component {
     render() {
         return(
             <div>
-                {/* WIP: */}
+                <Alert
+                    variant="success"
+                    renderCloseButtonLabel="Close"
+                    margin="small"
+                    transition="none"
+                >Sample success alert text. I will close w/o a transition out if you close me
+                </Alert>
+                <Alert
+                    variant="info"
+                    renderCloseButtonLabel="Close"
+                    margin="small"
+                >
+                    Sample info text. I will fade out if you close me.
+                </Alert>
+                <Alert
+                    variant="error"
+                    renderCloseButtonLabel="Close"
+                    margin="small"
+                >
+                    Sample error text that continues for a while
+                    to demonstrate what happens when the content stretches over
+                    several lines. It really does take a lot of prose to get the
+                    text to wrap when you are on a high resolution screen.
+                </Alert>
+                <Alert
+                    variant="warning"
+                    margin="small"
+                >
+                    Sample warning text. This alert is not dismissible and cannot be closed.
+                </Alert>
+                {/*/!* WIP: *!/*/}
                 <FetchStudentNames />
 
-                {/* WIP: */}
+                {/*/!* WIP: *!/*/}
                 <FetchTests />
 
                 {/* WIP: */}
-                <CountTestResults />
+                {/*<CountTestResults />*/}
 
-                {/* WIP: */}
-                <FetchGrades />
+                {/*/!* WIP: *!/*/}
+                {/*<FetchGrades />*/}
 
-                {/* WIP: All the data is defined in the constructor method located in the body-component. */}
+                {/*/!* WIP: All the data is defined in the constructor method located in the body-component. *!/*/}
                 <Chart chartData={this.state.chartData} location="the US of A" legendPosition="bottom"/>
             </div>
         )

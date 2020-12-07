@@ -19,7 +19,12 @@ export default class CountTestResults extends React.Component {
 
     // Asynchronous fetch call to hu-toetsregistratie.nl/api
     async componentDidMount() {
-        const urlPassed = "https://hu-toetsregistratie.nl/api/cijferid/?toets_code=1&voldoende=true";
+        // TODO: change toets_code=1 to toets_code={} in the urlPassed and urlFailed variables.
+
+        console.log('De input was: ' + this.props.data.id)
+
+
+        const urlPassed = `https://hu-toetsregistratie.nl/api/cijferid/?toets_code={this.props.data.id}&voldoende=true`;
         const responsePassed = await fetch(urlPassed);
         const dataPassed = await responsePassed.json();
         const countPassed = Object.keys(dataPassed).length
@@ -27,8 +32,8 @@ export default class CountTestResults extends React.Component {
 
         this.setState({countVold: countPassed})
 
-
-        const urlFailed = "https://hu-toetsregistratie.nl/api/cijferid/?toets_code=1&voldoende=false"
+        console.log('De input was: ' + this.props.data.id)
+        const urlFailed = `https://hu-toetsregistratie.nl/api/cijferid/?toets_code={this.props.data.id}&voldoende=false`
         const responseFailed = await fetch(urlFailed);
         const dataFailed = await responseFailed.json();
         const countFailed = Object.keys(dataFailed).length

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
-import Body from "./components/body/Body"
-import Header from "./components/header/Header"
+// import './App.css';
+import '@instructure/canvas-theme';
+import Body from "./components/body/Body";
+import Header from "./components/header/Header";
 
 class App extends Component {
   render() {
