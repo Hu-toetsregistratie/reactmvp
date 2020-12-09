@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 
 //TODO: Make it look nice and user-friendly....
 // @WHY: WIP
@@ -7,7 +7,7 @@ import React from "react";
 // This is the first attempt and alternatives have not been looked into yet.
 
 
-export default class FetchGrades extends React.Component {
+export default class FetchGrades extends Component {
     state = {
         loading: true,
         grades: [],
@@ -26,12 +26,6 @@ export default class FetchGrades extends React.Component {
         // An 'if' check for the value of the voldoende attribute (datatype: boolean).
         // @WHY
         // So that the (invisible) result isn't 'true' or 'false' but a visible string.
-
-        if (data[0].voldoende) {
-            this.setState({result: 'Voldoende'});
-        } else {
-            this.setState({result: 'Onvoldoende'});
-        }
     }
 
     render() {
@@ -45,9 +39,10 @@ export default class FetchGrades extends React.Component {
         return (
             <div>
                 {this.state.grades.map(grade => (
+
                     <div>
                         <div> Naam toets/ID van de toets: {grade.toets_naam} </div>
-                        <div> Resultaat: {this.state.result}</div>
+                        <div> Resultaat: { grade.voldoende }</div>
                         <div> Student (die het resultaat heeft behaald): {grade.student} </div>
                     </div>
                 ))}

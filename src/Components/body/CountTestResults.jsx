@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 
 
 //TODO:
@@ -8,7 +8,7 @@ import React from "react";
 // @WHAT: A component that fetches the data from test with id=1 and renders two lines of text with the amount of passed- and failed grades.
 // @WHY: To show the user the amount of passed and failed grades for a test.
 
-export default class CountTestResults extends React.Component {
+export default class CountTestResults extends Component {
     state = {
         loading: true,
         test: null,

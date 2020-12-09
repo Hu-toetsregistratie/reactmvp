@@ -1,19 +1,18 @@
 import React, {Component} from "react";
-// import FetchGrades from "./fetchGrades/FetchGrades";
-import Chart from "./chart/Chart";
+import FetchGrades from "./FetchGrades";
+import Chart from "./Chart";
 // import CountTestResults from "./input/selectTest/amountOfResults/CountTestResults";
-import FetchStudentNames from "./fetchStudentNames/FetchStudentNames";
-import FetchTests from "./fetchTests/FetchTests";
+import FetchStudentNames from "./FetchStudentNames";
+import FetchTests from "./FetchTests";
 import { Alert } from "@instructure/ui-alerts";
 
 class Body extends Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             chartData:{},
             studentData:{},
             resultData:{},
-
         }
     }
 
@@ -96,7 +95,7 @@ class Body extends Component {
                 {/*<CountTestResults />*/}
 
                 {/*/!* WIP: *!/*/}
-                {/*<FetchGrades />*/}
+                <FetchGrades />
 
                 {/*/!* WIP: All the data is defined in the constructor method located in the body-component. *!/*/}
                 <Chart chartData={this.state.chartData} location="the US of A" legendPosition="bottom"/>

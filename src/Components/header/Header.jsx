@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 // import CountTestResults from "../body/input/selectTest/amountOfResults/CountTestResults";
-import SelectTest from "../body/input/selectTest/SelectTest";
+import SelectTest from "../body/SelectTest";
 
 class Header extends Component {
     render() {

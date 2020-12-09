@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import CountTestResults from "./amountOfResults/CountTestResults";
+import CountTestResults from "./CountTestResults";
 // TAKEN DIRECTLY FROM https://reactjs.org/docs/forms.html
 // @TODO: Edit for personal use.
 

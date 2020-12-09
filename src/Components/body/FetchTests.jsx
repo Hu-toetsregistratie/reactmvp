@@ -1,6 +1,6 @@
-import React from "react";
+import React, { Component } from "react";
 
-export default class FetchTests extends React.Component {
+export default class FetchTests extends Component {
     state = {
         loading: true,
         test: {
