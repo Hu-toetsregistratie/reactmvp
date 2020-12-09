@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 // import CountTestResults from "../body/input/selectTest/amountOfResults/CountTestResults";
-import SelectTest from "../body/SelectTest";
+import SelectTest from "./SelectTest";
 
 class Header extends Component {
     render() {
@@ -8,7 +8,6 @@ class Header extends Component {
             <header className="App-header">
                 <h1>{this.props.title}</h1>
                 <SelectTest />
-
             </header>
         )
     }

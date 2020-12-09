@@ -24,18 +24,22 @@ export default class CountTestResults extends Component {
         console.log('De input was: ' + this.props.data.id)
 
 
-        const urlPassed = `https://hu-toetsregistratie.nl/api/cijferid/?toets_code={this.props.data.id}&voldoende=true`;
+        const urlPassed = `https://hu-toetsregistratie.nl/api/cijferid/?toets_code=${this.props.data.id}&voldoende=true`;
         const responsePassed = await fetch(urlPassed);
         const dataPassed = await responsePassed.json();
+
+        // counts the amount of passed results
         const countPassed = Object.keys(dataPassed).length
         console.log("Het aantal voldoendes is: " + countPassed)
 
         this.setState({countVold: countPassed})
 
         console.log('De input was: ' + this.props.data.id)
-        const urlFailed = `https://hu-toetsregistratie.nl/api/cijferid/?toets_code={this.props.data.id}&voldoende=false`
+        const urlFailed = `https://hu-toetsregistratie.nl/api/cijferid/?toets_code=${this.props.data.id}&voldoende=false`
         const responseFailed = await fetch(urlFailed);
         const dataFailed = await responseFailed.json();
+
+        // counts the amount of failed results
         const countFailed = Object.keys(dataFailed).length
         console.log("Het aantal onvoldoendes is: " + countFailed)
         this.setState({countOnv: countFailed, loading: false})

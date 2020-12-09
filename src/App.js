@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 // import './App.css';
 import '@instructure/canvas-theme';
-import Body from "./components/body/Body";
-import Header from "./components/header/Header";
+import BarChartView from './container/BarChartView'
+// import Body from "./components/Body";
+// import Header from "./components/test/Header";
 
 class App extends Component {
   render() {
     return (
         <div className="App">
-          <Header title={"Hello... how do u do"}/>
-          <Body />
+            <BarChartView />
         </div>
     );
   }
