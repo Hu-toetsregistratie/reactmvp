@@ -1,14 +1,20 @@
 {
+  "type": "module",
   "name": "toetsregistratie",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@instructure/canvas-theme": "^7.3.1",
+    "@instructure/ui-alerts": "^7.3.1",
+    "@instructure/ui-responsive": "^7.3.1",
+    "@instructure/ui-table": "^7.3.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
+    "react-table": "^7.6.2",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
