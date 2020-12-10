@@ -1,30 +1,22 @@
-import React from 'react';
-//import './App.css';
-import '@instructure/canvas-theme';
-import MyHeading from './componenten/heading/header';
-import Nav from './componenten/heading/nav'
-import Resultaten from './componenten/resultaten';
-import Student from "./componenten/student";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
 
+
+import React, {Suspense, lazy}from "react";
+import { CijfersView } from './Container/CijfersView';
+import '@instructure/canvas-theme';
+//import {Spinner} from '@instructure/ui-spinner';
+//const StudentView2 = lazy(() => import('./Container/StudentView2.js'));
+//import {StudentView2} from "./Container/StudentView2";
+//import {StudentView} from './Container/StudentView.js'
+import {CijfersView2} from './Container/CijfersView2'
 
 function App() {
   return (
-      <Router basename='./componenten'>
-        <div className="App" >
-          <MyHeading/>
-          <Nav/>
-          <Switch>
-            <Route path='/resultaten' component={Resultaten}/>
-            <Route path='/student' component={Student}/>
-          </Switch>
-        </div>
-      </Router>
+      <div className="App">
+            <CijfersView2 />
+      </div>
+
   );
+
 }
 
 export default App;
