@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Bar }  from 'react-chartjs-2'
 
 const data = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    labels: [],
     datasets: [
         {
             // styling
@@ -25,7 +25,7 @@ const data = {
             pointRadius: 1,
             pointHitRadius: 10,
             // data[0] = col1, data[1] = col2, etc.
-            data: [65, 59, 80, 81, 56, 55, 80],
+            data: [],
         }
     ]
 };

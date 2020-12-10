@@ -5,7 +5,7 @@ export default class BarChartView extends Component {
     state = {
         TestResults: {
             test: {
-                name: '4734ghfs',
+                name: '1',
                 n_passed: null,
                 n_failed: null,
             }
@@ -21,7 +21,7 @@ export default class BarChartView extends Component {
 
 
         // URL FOR DATA PASSED TESTS TEST 1
-        const urlPassed = `https://hu-toetsregistratie.nl/api/cijfer/?toets_code=1&voldoende=true`;
+        const urlPassed = `https://hu-toetsregistratie.nl/api/cijfer/?toets_naam=1&?toets_code=1&voldoende=true`;
         const responsePassed = await fetch(urlPassed);
         const dataPassed = await responsePassed.json();
 
@@ -30,7 +30,7 @@ export default class BarChartView extends Component {
 
 
         // URL FOR DATA FAILED TESTS TEST 1
-        const urlFailed = `https://hu-toetsregistratie.nl/api/cijfer/?toets_code=1&voldoende=false`
+        const urlFailed = `https://hu-toetsregistratie.nl/api/cijfer/?toets_naam=1&?toets_code=1&voldoende=false`
         const responseFailed = await fetch(urlFailed);
         const dataFailed = await responseFailed.json();
 
@@ -51,9 +51,14 @@ export default class BarChartView extends Component {
     }
 
     render() {
+
+        if (this.state.loading) {
+            return <div>loading...</div>
+        }
+
         return(
             <div>
-                <BarChart labels={[this.state.TestResults.test.name]}/>
+                <BarChart data={this.state.TestResults} />
             </div>
         )
     }

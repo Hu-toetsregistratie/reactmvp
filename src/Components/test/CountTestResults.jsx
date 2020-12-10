@@ -56,8 +56,8 @@ export default class CountTestResults extends Component {
         if (!this.state.countOnv) {
             return <div><div>Er zijn geen onvoldoendes voor deze toets!!</div><div> Aantal voldoendes: {this.state.countVold}</div>
             </div>
-
         }
+
         return (
             <div>
                 <div> Aantal Voldoendes: {this.state.countVold}</div>
