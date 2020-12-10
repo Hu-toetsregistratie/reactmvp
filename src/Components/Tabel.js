@@ -2,7 +2,7 @@ import React from "react";
 import {Table} from '@instructure/ui-table';
 import {Responsive} from '@instructure/ui-responsive';
 import {Alert} from '@instructure/ui-alerts';
-
+import { Pagination } from '@instructure/ui-pagination';
 
 class SortTabel extends React.Component {
     constructor (props) {
@@ -103,4 +103,75 @@ class SortTabel extends React.Component {
         )
     }
 }
-export {SortTabel};
+
+class PaginaTabel extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            page: 0,
+        }
+    }
+
+    handleClick = (page) => {
+        this.setState({
+            page,
+        })
+    }
+
+    handleSort = (event, options) => {
+        const { onSort } = this.props
+
+        this.setState({
+            page: 0,
+        })
+        onSort(event, options)
+    }
+
+    render() {
+        const { caption, headers, rows, sortBy, ascending, perPage } = this.props
+        const { page } = this.state
+        const startIndex = page * perPage
+        const slicedRows = rows.slice(startIndex, startIndex + perPage)
+        const pageCount = perPage && Math.ceil(rows.length / perPage)
+
+        return (
+            <div>
+                <SortTabel
+                    caption={caption}
+                    headers={headers}
+                    rows={slicedRows}
+                    onSort={this.handleSort}
+                    sortBy={sortBy}
+                    ascending={ascending}
+                    rowIds={rows.map((row) => row.id)}
+                />
+                {pageCount > 1 && (
+                    <Pagination
+                        variant='compact'
+                        labelNext='Next Page'
+                        labelPrev='Previous Page'
+                        margin='large'
+                    >
+                        {Array.from(Array(pageCount), (item, index) => (
+                            <Pagination.Page
+                                key={index}
+                                onClick={() => this.handleClick(index)}
+                                current={index === page}
+                            >
+                                {index + 1}
+                            </Pagination.Page>
+                        ))}
+                    </Pagination>
+                )}
+                <Alert
+                    liveRegion={() => document.getElementById('flash-messages')}
+                    liveRegionPoliteness="polite"
+                    screenReaderOnly
+                >
+                    {`Table page ${page + 1} of ${pageCount}`}
+                </Alert>
+            </div>
+        )
+    }
+}
+export {PaginaTabel};

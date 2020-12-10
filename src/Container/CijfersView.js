@@ -1,6 +1,6 @@
 import React, {useState, useEffect } from "react"
 import {ColumnsCijfers} from "../Components/Columns";
-import { SortTabel } from "../Components/Tabel.js";
+import { PaginaTabel } from "../Components/Tabel.js";
 require("node-fetch");
 
 
@@ -19,7 +19,7 @@ export function CijfersView() {
     };
     return (
         <div className={CijfersView}>
-            <SortTabel
+            <PaginaTabel
                 caption="Cijfers"
                 headers={ColumnsCijfers}
                 rows ={cijfers}
