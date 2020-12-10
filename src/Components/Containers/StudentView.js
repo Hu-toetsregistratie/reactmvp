@@ -1,7 +1,6 @@
 import React, {useState, useEffect } from "react"
-import {ColumnsStudent} from "../Components/Columns";
-import {PaginaTabel} from '../Components/Tabel';
-import {Spinner} from '@instructure/ui-spinner'
+import {ColumnsStudent} from "../Columns";
+import {PaginaTabel} from '../Tabel';
 require("node-fetch");
 
 
@@ -14,7 +13,7 @@ export function StudentView() {
 
         const getStudent = async () => {
             const res = await fetch('https://hu-toetsregistratie.nl/api/student.json', {
-                headers: {'Authorization': ('token ' + '3ee90f9c89fbc67c1de8ced4d2bda1b2092cb95a')}})
+                headers: {'Authorization': ('token 3ee90f9c89fbc67c1de8ced4d2bda1b2092cb95a')}})
                 const student = await res.json();
             setStudent(student);
 

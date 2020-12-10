@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import BarChart from "../components/BarChart";
+import BarChart from "../BarChart";
 
-export default class BarChartView extends Component {
+export class BarChartView extends Component {
     state = {
         TestResults: {
             test: {
@@ -58,7 +58,7 @@ export default class BarChartView extends Component {
 
         return(
             <div>
-                <BarChart data={this.state.TestResults} />
+                <BarChart />
             </div>
         )
     }
