@@ -1,13 +1,13 @@
 import React, { useState, useEffect} from 'react';
 import axios from 'axios';
-import {PaginaTabel} from "../Components/Tabel";
-import {ColumnsStudent} from "../Components/Columns";
+import {PaginaTabel} from "../Tabel";
+import {ColumnsStudent} from "../Columns";
 
 export const CijfersView2 = () => {
     const [cijfers, setCijfers] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [postPerPage, setPostsPerPage] = useState(10);
+    const [currentPage] = useState(1);
+    const [postPerPage] = useState(10);
 
     useEffect(() =>{
         getCijfers2();

@@ -1,5 +1,5 @@
-import {PaginaTabel} from "../Components/Tabel";
-import {ColumnsStudent} from "../Components/Columns";
+import {PaginaTabel} from "../Tabel";
+import {ColumnsStudent} from "../Columns";
 import React from "react";
 
 
