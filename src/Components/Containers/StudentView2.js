@@ -46,6 +46,7 @@ export function StudentView2() {
 
     const resource = fetchDataStudent();
     const student = resource.student.read();
+
     return (
 
         <div className={StudentView2}>
