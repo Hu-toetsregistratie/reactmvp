@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Suspense, lazy}from "react";
+import { CijfersView } from './Container/CijfersView';
+import '@instructure/canvas-theme';
+//import {Spinner} from '@instructure/ui-spinner';
+//const StudentView2 = lazy(() => import('./Container/StudentView2.js'));
+//import {StudentView2} from "./Container/StudentView2";
+//import {StudentView} from './Container/StudentView.js'
+import {CijfersView2} from './Container/CijfersView2'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App">
+            <CijfersView2 />
+      </div>
   );
 }
 
