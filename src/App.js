@@ -12,7 +12,9 @@ import {CijfersView2} from './Container/CijfersView2'
 function App() {
   return (
       <div className="App">
-            <CijfersView2 />
+          <Router>
+                  <BaseRouter/>
+          </Router>
       </div>
 
   );
