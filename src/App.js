@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+//import './App.css';
+import '@instructure/canvas-theme';
+import MyHeading from './componenten/heading/header';
+import Nav from './componenten/heading/nav'
+import Resultaten from './componenten/resultaten';
+import Student from "./componenten/student";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router basename='./componenten'>
+        <div className="App" >
+          <MyHeading/>
+          <Nav/>
+          <Switch>
+            <Route path='/resultaten' component={Resultaten}/>
+            <Route path='/student' component={Student}/>
+          </Switch>
+        </div>
+      </Router>
   );
 }
 
 export default App;
+

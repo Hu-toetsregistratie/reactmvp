@@ -1,0 +1,58 @@
+ul {
+    margin: 0;
+    padding:0;
+}
+
+h3 {
+    margin: 0 30px;
+    padding: 10px 5px;
+    display: block;
+}
+
+.header {
+    margin: 5px;
+    padding: 5px;
+    position: sticky;
+    top: 0;
+    background: white;
+    border-bottom: 1px solid #C7CDD1;
+    height: 50px;
+    align-items: center;
+    display: flex;
+}
+
+.nav {
+    height: 100%;
+    width: 150px;
+    position: fixed;
+    overflow-x: hidden;
+}
+
+.nav li {
+    margin: 0 30px;
+    padding: 10px 5px;
+    font-size: 15px;
+    display: block;
+    color: #28aeff;
+}
+
+.nav li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.nav .active:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.nav .active {
+    color: #3d3d3d;
+    border-left: #3d3d3d 2px solid;
+}
+
+.content {
+    margin-left: 150px;
+    padding: 5px;
+    height: 1000px;
+}
