@@ -1,4 +1,5 @@
 
+
 import React, {Suspense, lazy}from "react";
 import { CijfersView } from './Container/CijfersView';
 import '@instructure/canvas-theme';
@@ -13,8 +14,10 @@ function App() {
       <div className="App">
             <CijfersView2 />
       </div>
+
   );
 
 }
 
 export default App;
+
