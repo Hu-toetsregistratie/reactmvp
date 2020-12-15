@@ -1,10 +1,10 @@
 import React from 'react';
 //import './App.css';
 import '@instructure/canvas-theme';
-import MyHeading from './componenten/heading/header';
-import Nav from './componenten/heading/nav'
-import Resultaten from './componenten/resultaten';
-import Student from "./componenten/student";
+import MyHeading from './Components/Base/header';
+import Nav from './Components/Base/nav'
+import Resultaten from './Components/resultaten';
+import Student from "./Components/student";
 import {
   BrowserRouter as Router,
   Switch,
