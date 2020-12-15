@@ -9,10 +9,10 @@ import {CijfersView2} from "./Components/Containers/CijfersView2";
 
 const BaseRouter = () => (
 <div>
-    <Route Exact path='/CijferView' component={CijfersView} />
+    <Route Exact path='/GradesView' component={GradesView} />
     <Route Exact path='/StudentView' component={StudentView} />
     <Route Exact path='/BarChartView' component={BarChartView} />
-    <Route Exact path = '/CijfersView2' component={CijfersView2} />
+    <Route Exact path = '/GradesView2' component={GradesView2} />
 </div>
 
 );

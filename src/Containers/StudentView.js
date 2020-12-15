@@ -6,7 +6,7 @@ require("node-fetch");
 
 
 
- function StudentView() {
+ const StudentView = () => {
     const [student, setStudent] = useState([]);
     const [loading, setLoading] = useState(false);
         useEffect(() => {
@@ -43,7 +43,7 @@ export {StudentView};
 
  //////////////////////////////////////////////Lazy Tabel loading//////////////////////////////////////////////////////
 
-function Lazyloading (){
+const LazyTabel =()=> {
     function fetchDataStudent () {
         const studentPromise = fetchStudent();
         return {
@@ -104,4 +104,4 @@ function Lazyloading (){
         );
     }
 }
-//export {Lazyloading};
+//export {LazyTabel};
