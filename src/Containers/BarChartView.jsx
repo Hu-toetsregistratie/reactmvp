@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import BarChart from "../BarChart";
+import BarChart from "../Components/BarChart";
 
 export class BarChartView extends Component {
     state = {

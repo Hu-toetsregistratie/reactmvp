@@ -1,6 +1,6 @@
 import React, {useState, useEffect } from "react"
-import {ColumnsCijfers} from "../Columns";
-import { PaginaTabel } from "../Tabel.js";
+import {ColumnsCijfers} from "../Components/Columns";
+import { PaginaTabel } from "../Components/Tabel";
 import {Spinner} from "@instructure/ui-spinner";
 require("node-fetch");
 
