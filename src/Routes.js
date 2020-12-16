@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom'
 import {GradesView} from "./Containers/GradesView";
 import {StudentsView} from "./Containers/StudentsView"
 import {BarChartView} from "./Containers/BarChartView"
-import {StudentIndividual} from "./Components/StudentTable(individual)";
+import {IndividualStudentView} from "./Containers/IndividualStudentView";
 
 
 const BaseRouter = () => (
@@ -12,7 +12,7 @@ const BaseRouter = () => (
     <Route Exact path='/GradesView' component={GradesView} />
     <Route Exact path='/StudentsView' component={StudentsView} />
     <Route Exact path='/BarChartView' component={BarChartView} />
-    <Route Exact='/StudentIndividual' component={StudentIndividual}/>
+    <Route Exact='/StudentIndividual' component={IndividualStudentView}/>
 </div>
 
 );
