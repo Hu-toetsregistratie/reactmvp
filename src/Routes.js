@@ -12,7 +12,7 @@ const BaseRouter = () => (
     <Route Exact path='/GradesView' component={GradesView} />
     <Route Exact path='/StudentsView' component={StudentsView} />
     <Route Exact path='/HistogramView' component={HistogramView} />
-    <Route Exact='/StudentIndividual' component={IndividualStudentView}/>
+    <Route Exact path='/StudentIndividual' component={IndividualStudentView} />
 </div>
 
 );

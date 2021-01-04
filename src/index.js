@@ -4,8 +4,6 @@ import './index.css';
 import '@instructure/canvas-theme'
 import App from './App';
 
-import reportWebVitals from './reportWebVitals';
-
 
 ReactDOM.render(
   <React.StrictMode>
