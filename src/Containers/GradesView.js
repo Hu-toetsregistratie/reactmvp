@@ -1,8 +1,7 @@
-import React, {useState, useEffect } from "react"
+import React, {useState, useEffect } from "react";
 import {ColumnsCijfers} from "../Components/Columns";
 import { PaginaTabel } from "../Components/Tabel";
 import {Spinner} from "@instructure/ui-spinner";
-require("node-fetch");
 
 
 const GradesView = () => {

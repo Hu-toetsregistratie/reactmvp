@@ -8,7 +8,6 @@ const IndividualStudentView = () =>{
         ContainerTabel: {
             maxWidth: '50%',
             maxHeight: '50%',
-
         }
     }
 
@@ -18,11 +17,11 @@ const IndividualStudentView = () =>{
             headers: {'Authorization': ('token 74b3873bb95d80d4218104d99468529fb40ff8bd')}} )
         const Individual = await res.json();
         console.log(Individual);
-        for (var i=0;i<Individual.length;i+=1){
-            if (Individual[i].voldoende == true){
+        for (let i=0;i<Individual.length;i+=1){
+            if (Individual[i].voldoende === true){
                 Individual[i].voldoende = 'voldoende';
             }
-            if (Individual[i].voldoende== false){
+            if (Individual[i].voldoende === false){
                 Individual[i].voldoende = 'onvoldoende';
             }
         }
