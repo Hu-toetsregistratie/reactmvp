@@ -1,4 +1,19 @@
+export const ColumnsIndividual = [
+    {
+        id:'toets_code',
+        text: 'Toets'
+    },
+    {
+        id: 'blok',
+        text: 'Blok'
+    },
+    {
+        id: 'voldoende',
+        text: 'Resultaat'
+    }
 
+
+]
 export const ColumnsStudent = [
 
     {
