@@ -13,7 +13,7 @@ const GradesView = () => {
     const getCijfers = async () => {
         setLoading(true);
         const response = await fetch('https://hu-toetsregistratie.nl/api/cijfer.json', {
-            headers : { 'Authorization':('token 3ee90f9c89fbc67c1de8ced4d2bda1b2092cb95a')}});
+            headers : { 'Authorization':('token 74b3873bb95d80d4218104d99468529fb40ff8bd\n')}});
         const cijfers = await response.json()
         setCijfers(cijfers)
         setLoading(false);
@@ -28,10 +28,9 @@ const GradesView = () => {
             <PaginaTabel
                 caption="Cijfers"
                 headers={ColumnsCijfers}
-                rows ={cijfers}
+                rows = {cijfers}
                 perPage={10}
             />
-
         </div>
     );
 }
@@ -87,4 +86,3 @@ const Cijfersfunk= ({cijfers, loading}) => {
         </div>
     );
 }
-//export {GradesView2}

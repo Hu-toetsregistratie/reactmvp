@@ -15,7 +15,7 @@ import {Spinner} from "@instructure/ui-spinner";
         const getStudent = async () => {
             setLoading(true);
             const res = await fetch('https://hu-toetsregistratie.nl/api/student.json', {
-                headers: {'Authorization': ('token 3ee90f9c89fbc67c1de8ced4d2bda1b2092cb95a')}})
+                headers: {'Authorization': ('token 74b3873bb95d80d4218104d99468529fb40ff8bd')}})
                 const student = await res.json();
             console.log(student);
             setStudent(student);

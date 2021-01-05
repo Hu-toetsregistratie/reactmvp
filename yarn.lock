@@ -1727,6 +1727,22 @@
     classnames "^2"
     prop-types "^15"
 
+"@instructure/ui-progress@^7.3.2":
+  version "7.3.2"
+  resolved "https://registry.yarnpkg.com/@instructure/ui-progress/-/ui-progress-7.3.2.tgz#1969efc187ce47718d5e2ff860a41c3c8d52dd43"
+  integrity sha512-IAkatZjK3Vd8cfiDH3O2BWGQG3wKu4CrQRobJKg48du/Ro4iMyEd5DRHjLBN2/DsO+occiEhAYrwXfETQn0VTA==
+  dependencies:
+    "@babel/runtime" "^7.9.2"
+    "@instructure/console" "^7.3.2"
+    "@instructure/ui-a11y-content" "^7.3.2"
+    "@instructure/ui-color-utils" "^7.3.2"
+    "@instructure/ui-react-utils" "^7.3.2"
+    "@instructure/ui-testable" "^7.3.2"
+    "@instructure/ui-themeable" "^7.3.2"
+    "@instructure/ui-view" "^7.3.2"
+    classnames "^2"
+    prop-types "^15"
+
 "@instructure/ui-prop-types@^7.3.1":
   version "7.3.1"
   resolved "https://registry.yarnpkg.com/@instructure/ui-prop-types/-/ui-prop-types-7.3.1.tgz#abf7c1aa5dae196206557b4c61be1329aa8c9c41"

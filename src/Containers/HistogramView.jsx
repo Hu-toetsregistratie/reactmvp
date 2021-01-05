@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { ProgressCircle } from '@instructure/ui-progress'
+
 import {Histogram} from "../Components/Histogram";
 
 export class HistogramView extends Component {
@@ -13,13 +15,22 @@ export class HistogramView extends Component {
     render() {
 
         if (this.state.loading) {
-            return <div>loading...</div>
-        }
-
-        return(
+            return (
             <div>
-                <Histogram />
-            </div>
-        )
+                <ProgressCircle
+                size="small"
+                screenReaderLabel="Loading completion"
+                valueNow={100}
+                valueMax={100}
+                margin="0 small 0 0"
+                shouldAnimateOnMount/>
+            </div>)
+        } else {
+            return (
+                <div>
+                    <Histogram/>
+                </div>
+            )
+        }
     }
 }
