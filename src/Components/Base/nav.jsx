@@ -17,6 +17,9 @@ textDecoration: 'none'
                 <Link style={navStyle} to='/student'>
                     <li>Student</li>
                 </Link>
+                <Link style={navStyle} to='/toets'>
+                    <li>Toets</li>
+                </Link>
             </ul>
         </nav>
     );

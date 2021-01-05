@@ -1,5 +1,4 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 //import '/src/App.css';
 
 function Resultaten() {
@@ -10,4 +9,4 @@ function Resultaten() {
     );
 }
 
-export default withRouter(Resultaten);
+export default Resultaten;
