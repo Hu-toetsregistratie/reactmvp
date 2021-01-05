@@ -3,12 +3,13 @@ import {BaseRouter} from "./Routes";
 import '@instructure/canvas-theme';
 import React from "react";
 
+
 function App() {
   return (
       <div className="App">
-          <Router>
-                  <BaseRouter/>
-          </Router>
+       <Router>
+           <BaseRouter />
+       </Router>
       </div>
 
   );

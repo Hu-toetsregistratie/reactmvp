@@ -80,7 +80,7 @@ class SortTabel extends React.Component {
                             </Table.Head>
                             <Table.Body>
                                 {sortedRows.map((row) => (
-                                    <Table.Row key={row.id}>
+                                    <Table.Row key={row.id} >
                                         {headers.map(({ id, renderCell }) => (
                                             <Table.Cell key={id}>
                                                 {renderCell ? renderCell(row[id]) : row[id]}
