@@ -6,7 +6,11 @@
   grid-template-columns: 1fr 2fr;
   grid-gap: 1px;
 }
-
+.grid {
+  display: grid;
+  grid-template-columns: 300px 1000px auto;
+  grid-gap: 1rem;
+}
 .content {
   text-align: left;
   display: inline-block;
