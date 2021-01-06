@@ -4,7 +4,7 @@ import {Responsive} from '@instructure/ui-responsive';
 import {Alert} from '@instructure/ui-alerts';
 import { Pagination } from '@instructure/ui-pagination';
 
-class SortTabel extends React.Component {
+class TableSort extends React.Component {
     constructor (props) {
         super(props)
         const { headers } = props
@@ -104,7 +104,7 @@ class SortTabel extends React.Component {
     }
 }
 
-class PaginaTabel extends React.Component {
+class TablePages extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -136,7 +136,7 @@ class PaginaTabel extends React.Component {
 
         return (
             <div>
-                <SortTabel
+                <TableSort
                     caption={caption}
                     headers={headers}
                     rows={slicedRows}
@@ -174,4 +174,4 @@ class PaginaTabel extends React.Component {
         )
     }
 }
-export {PaginaTabel};
+export {TablePages};

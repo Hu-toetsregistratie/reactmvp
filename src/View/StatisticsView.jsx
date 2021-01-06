@@ -3,7 +3,7 @@ import { ProgressCircle } from '@instructure/ui-progress'
 
 import {Histogram} from "../Components/Histogram";
 
-export class HistogramView extends Component {
+export class StatisticsView extends Component {
     state = {
         loading: true,
     }

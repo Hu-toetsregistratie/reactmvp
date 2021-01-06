@@ -1,22 +1,19 @@
 import React from "react";
 import { Route } from 'react-router-dom';
 
-import {GradesView} from "./Containers/GradesView";
-import {StudentsView} from "./Containers/StudentsView";
-import {HistogramView} from "./Containers/HistogramView";
+import {StatisticsView} from "./View/StatisticsView";
+import {StudentsView} from "./View/StudentsView";
+import {GradesView} from "./View/GradesView";
 import {IndividualStudentView} from "./Containers/IndividualStudentView";
+import Home from "./View/Home";
 
 
-const BaseRouter = () => (
-<div>
-    <Route Exact path='/GradesView' component={GradesView} />
-    <Route Exact path='/StudentsView' component={StudentsView} />
-    <Route Exact path='/HistogramView' component={HistogramView} />
-    <Route Exact path='/StudentIndividual' component={IndividualStudentView} />
-</div>
-
+export const BaseRouter = () => (
+    <div>
+        <Route Exact path="/"  component={Home} />
+        <Route Exact path='/Resultaten' component={GradesView} />
+        <Route Exact path='/Studenten' component={StudentsView} />
+        <Route Exact path='/IndividueleStudent' component={IndividualStudentView} />
+        <Route Exact path='/Histogram' component={StatisticsView} />
+    </div>
 );
-
-
-
-export { BaseRouter };

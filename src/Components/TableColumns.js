@@ -48,7 +48,7 @@ export const ColumnsCijfers = [
         text: 'Toets naam'
     },
     {
-        id: 'Voldoende',
+        id: 'voldoende',
         text: 'Voldoende'
     },
 ]

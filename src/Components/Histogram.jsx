@@ -80,9 +80,15 @@ export class Histogram extends Component {
 
 
     render() {
+        const HistogramStyle = {
+           maxWidth: '600px',
+        }
         return (
             <div>
-                <Bar data={this.state.chartData} options={this.state.chartOptions}/>
+                <h2> Resultaten van toets 1 tot en met toets 18 </h2>
+                <div style={HistogramStyle}>
+                    <Bar data={this.state.chartData} options={this.state.chartOptions}/>
+                </div>
             </div>
         )
     }
