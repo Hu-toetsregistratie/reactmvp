@@ -1,6 +1,6 @@
 import React, {useState, useEffect } from "react"
 import {ColumnsStudent} from "../Components/TableColumns";
-import {TablePages} from '../Components/Table';
+import {TablePages} from "../Components/Table";
 import {Spinner} from "@instructure/ui-spinner";
 
 
@@ -14,8 +14,8 @@ import {Spinner} from "@instructure/ui-spinner";
 
         const getStudent = async () => {
             setLoading(true);
-            const res = await fetch('https://hu-toetsregistratie.nl/api/student.json', {
-                headers: {'Authorization': ('token 74b3873bb95d80d4218104d99468529fb40ff8bd')}})
+            const res = await fetch("https://hu-toetsregistratie.nl/api/student.json", {
+                headers: {"Authorization": ("token 74b3873bb95d80d4218104d99468529fb40ff8bd")}})
                 const student = await res.json();
             console.log(student);
             setStudent(student);

@@ -16,12 +16,10 @@ const IndividualStudentImage = () =>{
             maxHeight: '50%',
             float: 'right'
         },
-
         Text:{
             paddingLeft:'35%',
             float: 'left'
         }
-
     };
     return(
 
