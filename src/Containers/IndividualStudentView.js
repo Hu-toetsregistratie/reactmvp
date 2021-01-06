@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import {IndividualStudentImage} from "../Components/IndividualStudentImage";
-import {PaginaTabel} from "../Components/Tabel";
-import {ColumnsIndividual} from "../Components/Columns";
+import {TablePages} from "../Components/Table";
+import {ColumnsIndividual} from "../Components/TableColumns";
 
 const IndividualStudentView = () =>{
     const styles ={
@@ -35,7 +35,7 @@ const IndividualStudentView = () =>{
       <div className={IndividualStudentView}>
           <IndividualStudentImage />
           <div style={styles.ContainerTabel}>
-              <PaginaTabel
+              <TablePages
                   caption='Student Individueel'
                   headers={ColumnsIndividual}
                   rows={Individual}

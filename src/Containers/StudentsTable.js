@@ -1,11 +1,11 @@
 import React, {useState, useEffect } from "react"
-import {ColumnsStudent} from "../Components/Columns";
-import {PaginaTabel} from '../Components/Tabel';
+import {ColumnsStudent} from "../Components/TableColumns";
+import {TablePages} from '../Components/Table';
 import {Spinner} from "@instructure/ui-spinner";
 
 
 
- const StudentsView = () => {
+ const StudentsTable = () => {
     const [student, setStudent] = useState([]);
     const [loading, setLoading] = useState(false);
         useEffect(() => {
@@ -28,8 +28,8 @@ import {Spinner} from "@instructure/ui-spinner";
     }
 
         return (
-            <div className={StudentsView}>
-                <PaginaTabel
+            <div className={StudentsTable}>
+                <TablePages
                     caption="Studenten"
                     headers={ColumnsStudent}
                     rows ={student}
@@ -38,4 +38,4 @@ import {Spinner} from "@instructure/ui-spinner";
             </div>
         );
     }
-export {StudentsView};
+export {StudentsTable};
