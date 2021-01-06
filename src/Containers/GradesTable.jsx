@@ -16,17 +16,19 @@ const GradesTable = () => {
             headers : { "Authorization":("token 74b3873bb95d80d4218104d99468529fb40ff8bd\n")}});
         const cijfers = await response.json();
 
-        for (let i=0;i<cijfers.length;i+=1){
-            if (cijfers[i].voldoende === true){
+        for (let i=0; i<cijfers.length; i+=1){
+            if (cijfers[i].voldoende){
                 cijfers[i].voldoende = "Voldoende";
             }
-            if (cijfers[i].voldoende === false){
+            if (!cijfers[i].voldoende){
                 cijfers[i].voldoende = "Onvoldoende";
             }
         }
 
         setCijfers(cijfers)
         setLoading(false);
+        console.log(cijfers[0].student.voornaam)
+        console.log(cijfers[0].student.achternaam)
         console.log(cijfers)
     };
     if (loading) {
@@ -39,7 +41,7 @@ const GradesTable = () => {
                 caption="Cijfers"
                 headers={ColumnsCijfers}
                 rows = {cijfers}
-                perPage={40}
+                perPage={160}
             />
         </div>
     );
