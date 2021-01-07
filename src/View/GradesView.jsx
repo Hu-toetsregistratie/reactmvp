@@ -1,5 +1,5 @@
 import React from 'react';
-import {GradesTable} from "../Containers/GradesTable";
+import {GradesTable} from "../Components/GradesTable";
 
 export function GradesView() {
     return (

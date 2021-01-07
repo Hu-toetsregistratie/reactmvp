@@ -9,10 +9,11 @@ export function SideNav() {
         <div style={navStyle} className="Navbar">
             <nav className='side-nav'>
                 <Link to="/">Home</Link>
-                <Link to="/Resultaten">Resultaten</Link>
                 <Link to="/Studenten">Studenten</Link>
-                <Link to="/IndividueleStudent">Individuele student</Link>
+                <Link to="/Resultaten">Resultaten</Link>
+                <Link to="/Toetsen">Toetsen</Link>
                 <Link to="/Histogram">Statistiek</Link>
+                <Link to="/IndividueleStudent">Individuele student (WIP)</Link>
             </nav>
         </div>
     );

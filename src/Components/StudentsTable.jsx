@@ -1,6 +1,6 @@
 import React, {useState, useEffect } from "react"
-import {ColumnsStudent} from "../Components/TableColumns";
-import {TablePages} from "../Components/Table";
+import {ColumnsStudent} from "./TableColumns";
+import {TablePages} from "./Table";
 import {Spinner} from "@instructure/ui-spinner";
 
 
@@ -28,13 +28,16 @@ import {Spinner} from "@instructure/ui-spinner";
     }
 
         return (
-            <div className={StudentsTable}>
-                <TablePages
-                    caption="Studenten"
-                    headers={ColumnsStudent}
-                    rows ={student}
-                    perPage = {10}
-                />
+            <div>
+                <h2>Studentenoverzicht</h2>
+                <div className={StudentsTable}>
+                    <TablePages
+                        caption="Studenten"
+                        headers={ColumnsStudent}
+                        rows ={student}
+                        perPage = {180}
+                    />
+                </div>
             </div>
         );
     }
