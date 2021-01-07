@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React  from 'react';
 
-export function ChartTable(props) {
+export function StatisticsTable(props) {
     return (
-        <div className={ChartTable}>
+        <div className={StatisticsTable}>
             <p>{props.examName}</p>
             <p>{props.gradePassedPercentage} </p>
             <p>{props.gradeFailedPercentage}</p>
