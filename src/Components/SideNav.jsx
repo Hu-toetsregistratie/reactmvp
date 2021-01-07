@@ -1,5 +1,5 @@
 import React from 'react';
-import './Base/SideNav.css';
+import './SideNav.css';
 import {Link} from 'react-router-dom'
 
 export function SideNav() {
