@@ -1,6 +1,6 @@
 import React from 'react';
 
-const IndividualStudentImage = () =>{
+const IndividualStudentImage = ({ naam }) =>{
 
 
     const styles = {
@@ -16,21 +16,20 @@ const IndividualStudentImage = () =>{
             maxHeight: '50%',
             float: 'right'
         },
-
         Text:{
             paddingLeft:'35%',
             float: 'left'
         }
 
     };
+
     return(
 
-        <div  >
+        <div>
             <div style = {styles.Container} >
                 <img style={styles.Circle} src={'https://wallpaperplay.com/walls/full/1/5/0/212353.jpg'}/>
-                <h3 style={styles.Text}>Naam Pandas</h3>
+                <h3 style={styles.Text} >{ naam }</h3>
             </div>
-
         </div>
     );
 }

@@ -31,6 +31,14 @@ export const ColumnsStudent = [
 
 ]
 export const ColumnsCijfers = [
+        {
+            id: 'voornaam',
+            text: 'Voornaam'
+        },
+        {
+            id: 'achternaam',
+            text: 'Achternaam'
+        },
     {
         id: 'blok',
         text: 'Blok'
@@ -48,7 +56,7 @@ export const ColumnsCijfers = [
         text: 'Toets naam'
     },
     {
-        id: 'Voldoende',
+        id: 'voldoende',
         text: 'Voldoende'
     },
 ]
