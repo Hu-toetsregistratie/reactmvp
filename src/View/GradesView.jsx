@@ -1,13 +1,13 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
-//import '/src/App.css';
+import {GradesTable} from "../Containers/GradesTable";
 
-function Resultaten() {
+export function GradesView() {
     return (
         <div className='content'>
             <h1>Resultaten overzicht</h1>
+            <GradesTable />
         </div>
     );
 }
 
-export default withRouter(Resultaten);
+

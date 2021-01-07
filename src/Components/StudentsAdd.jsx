@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 
 const StudentInvoeren = () => {
@@ -27,7 +27,7 @@ const StudentInvoeren = () => {
             'student_nummer': selNummer,
         };
         try {
-            let naam = await fetch('https://hu-toetsregistratie.nl/api/student/', {
+            await fetch('https://hu-toetsregistratie.nl/api/student/', {
                     method: 'post',
                     headers: {
                         'Authorization': "token 3ee90f9c89fbc67c1de8ced4d2bda1b2092cb95a",
@@ -39,12 +39,12 @@ console.log(data)
         } catch (e) {
             console.log(e)
         }
-    };
+    }
 
     function invoeren(e) {
         e.preventDefault()
         PostStudent();
-    };
+    }
 
     return (
         <form id="myForm" onSubmit={invoeren}>
