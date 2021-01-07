@@ -1,21 +1,6 @@
 import React from 'react';
 
-
 const StudentInvoeren = () => {
-    // const [voornaam, setVoornaam] = useState('');
-    // const [achternaam, setAchternaam] = useState('');
-    //
-    // const updateVoornaam = e => {
-    //     setVoornaam(e.target.value)
-    // }
-    // const updateAchternaam = e => {
-    //     setAchternaam(e.target.value)
-    // }
-
-    // function lala(e) {
-    //     e.preventDefault()
-    // };
-
     async function PostStudent() {
         let selVoor = document.getElementById('voornaam').value;
         let selAchter = document.getElementById('achternaam').value;
@@ -28,14 +13,14 @@ const StudentInvoeren = () => {
         };
         try {
             await fetch('https://hu-toetsregistratie.nl/api/student/', {
-                    method: 'post',
-                    headers: {
-                        'Authorization': "token 3ee90f9c89fbc67c1de8ced4d2bda1b2092cb95a",
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data)
-                });
-console.log(data)
+                method: 'post',
+                headers: {
+                    'Authorization':("token 74b3873bb95d80d4218104d99468529fb40ff8bd"),
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            });
+            console.log(data)
         } catch (e) {
             console.log(e)
         }

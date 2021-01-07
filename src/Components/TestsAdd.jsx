@@ -5,8 +5,8 @@ class ToetsInvoeren extends React.Component {
         selectOptions: [],
         toetscode: '',
         toetsnaam: '',
-        blok: '',
-        jaar: ''
+        blok: '1',
+        jaar: '1'
     }
 
     async componentDidMount() {
@@ -73,17 +73,17 @@ class ToetsInvoeren extends React.Component {
                         <label htmlFor="blok-dropdown">Blok: </label>
                         <select id="blok-dropdown" value={this.state.blok}
                                 onChange={(event) => {
-                            this.setState({blok: event.target.value})
+                            this.setState({blok: event.target.value, jaar:event.target.value})
                         }} required>
                             {this.state.selectOptions.map(select => <option
-                                value={select.value} key={select.value}>{select.blok}</option>)}</select>
+                                value={select.value} key={select.value}>Jaar {select.jaar} {select.blok}</option>)}</select>
                         <br/>
-                        <label htmlFor="jaar-dropdown">Jaar: </label>
-                        <select id="jaar-dropdown" value={this.state.jaar} onChange={(event) => {
-                            this.setState({jaar: event.target.value})
-                        }} required>
-                            {this.state.selectOptions.map(select => <option
-                                value={select.value} key={select.value}>{select.jaar}</option>)}</select>
+                        {/*<label htmlFor="jaar-dropdown">Jaar: </label>*/}
+                        {/*<select id="jaar-dropdown" value={this.state.jaar} onChange={(event) => {*/}
+                        {/*    this.setState({jaar: event.target.value})*/}
+                        {/*}} required>*/}
+                        {/*    {this.state.selectOptions.map(select => <option*/}
+                        {/*        value={select.value} key={select.value}>{select.jaar}</option>)}</select>*/}
                         <br/>
                         <br/>
                         <br/>
