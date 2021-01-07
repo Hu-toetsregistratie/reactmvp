@@ -2,24 +2,39 @@ import React, {useState, useEffect } from "react"
 import {ColumnsCijfers} from "../Components/Columns";
 import { PaginaTabel } from "../Components/Tabel";
 import {Spinner} from "@instructure/ui-spinner";
-require("node-fetch");
+
 
 
 const GradesView = () => {
     const [loading, setLoading] = useState(false);
     const [cijfers, setCijfers] = useState([]);
+    const [student, setNaam] = useState({id:voornaam},[]);
     useEffect(() => {
         getCijfers();
     }, []);
     const getCijfers = async () => {
         setLoading(true);
         const response = await fetch('https://hu-toetsregistratie.nl/api/cijfer.json', {
-            headers : { 'Authorization':('token 3ee90f9c89fbc67c1de8ced4d2bda1b2092cb95a')}});
+            headers : { 'Authorization':('token 74b3873bb95d80d4218104d99468529fb40ff8bd')}});
         const cijfers = await response.json()
+        for (var i=0;i<cijfers.length;i+=1){
+            if (cijfers[i].voldoende === true){
+                cijfers[i].voldoende = 'voldoende';
+            }
+            if (cijfers[i].voldoende === false){
+                cijfers[i].voldoende = 'onvoldoende';
+            }
+            const {student:{voornaam, achternaam}} = cijfers[i]
+            const student = voornaam + ' ' + achternaam
+            setNaam(student)
+        }
+        setNaam(student)
         setCijfers(cijfers)
         setLoading(false);
         console.log(cijfers)
+        console.log(student)
     };
+
     if (loading) {
         return <div style={{height:"20em",display:"flex",alignItems:"center",justifyContent:"center"}}><Spinner renderTitle="Loading" variant="inverse"
         /></div>
@@ -29,7 +44,7 @@ const GradesView = () => {
             <PaginaTabel
                 caption="Cijfers"
                 headers={ColumnsCijfers}
-                rows ={cijfers}
+                rows ={student}
                 perPage={10}
             />
 

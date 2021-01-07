@@ -3,10 +3,14 @@ import {Table} from '@instructure/ui-table';
 import {Responsive} from '@instructure/ui-responsive';
 import {Alert} from '@instructure/ui-alerts';
 import { Pagination } from '@instructure/ui-pagination';
+import { Link } from 'react-router-dom'
+import {IconUserLine} from "@instructure/ui-icons";
 
 class SortTabel extends React.Component {
     constructor (props) {
         super(props)
+        this.state = { id_row: 0 };
+        this.individualClick = this.individualClick.bind(this);
         const { headers } = props
 
         this.state = {
@@ -29,9 +33,14 @@ class SortTabel extends React.Component {
             })
         }
     }
+    individualClick = () => {
+        const row_id = this.row.id
+        this.props.callBack(row_id);
+        console.log(row_id)
+    }
 
     render() {
-        const { caption, headers, rows } = this.props
+        const { caption, headers, rows,  } = this.props
         const { sortBy, ascending } = this.state
         const direction = ascending ? 'ascending' : 'descending'
         const sortedRows = [...(rows || [])].sort((a, b) => {
@@ -80,13 +89,21 @@ class SortTabel extends React.Component {
                             </Table.Head>
                             <Table.Body>
                                 {sortedRows.map((row) => (
-                                    <Table.Row key={row.id} >
+                                    <Table.Row key={row.id}  onClick = {() => this.individualClick(row.id)} >
+
                                         {headers.map(({ id, renderCell }) => (
                                             <Table.Cell key={id}>
+
                                                 {renderCell ? renderCell(row[id]) : row[id]}
+
+
                                             </Table.Cell>
+
                                         ))}
+
+
                                     </Table.Row>
+
                                 ))}
                             </Table.Body>
                         </Table>
