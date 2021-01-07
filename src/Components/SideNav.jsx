@@ -12,7 +12,7 @@ export function SideNav() {
                 <Link to="/Studenten">Studenten</Link>
                 <Link to="/Resultaten">Resultaten</Link>
                 <Link to="/Toetsen">Toetsen</Link>
-                <Link to="/Histogram">Statistiek</Link>
+                <Link to="/Statistiek">Statistiek</Link>
                 <Link to="/IndividueleStudent">Individuele student (WIP)</Link>
             </nav>
         </div>
