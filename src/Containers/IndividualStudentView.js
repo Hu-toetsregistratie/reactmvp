@@ -19,10 +19,10 @@ const IndividualStudentView = () =>{
         const Individual = await res.json();
         console.log(Individual);
         for (var i=0;i<Individual.length;i+=1){
-            if (Individual[i].voldoende == true){
+            if (Individual[i].voldoende === true){
                 Individual[i].voldoende = 'voldoende';
             }
-            if (Individual[i].voldoende== false){
+            if (Individual[i].voldoende === false){
                 Individual[i].voldoende = 'onvoldoende';
             }
         }
