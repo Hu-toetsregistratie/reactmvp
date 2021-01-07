@@ -1,6 +1,6 @@
 import React, {useState, useEffect } from "react"
-import {ColumnsStudent} from "../Components/TableColumns";
-import {TablePages} from "../Components/Table";
+import {ColumnsStudent} from "./TableColumns";
+import {TablePages} from "./Table";
 import {Spinner} from "@instructure/ui-spinner";
 
 

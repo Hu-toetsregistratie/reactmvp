@@ -1,5 +1,5 @@
 import React from 'react';
-import ToetsInvoeren from "../Components/test_add";
+import ToetsInvoeren from "../Components/TestsAdd";
 
 export function Toets() {
     return (
