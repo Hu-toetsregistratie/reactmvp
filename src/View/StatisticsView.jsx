@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { ProgressCircle } from '@instructure/ui-progress'
 
 import {Histogram} from "../Components/Histogram";
+import {StatisticsTable} from "../Components/StatisticsTable";
 
 export class StatisticsView extends Component {
     state = {
@@ -29,6 +30,7 @@ export class StatisticsView extends Component {
             return (
                 <div>
                     <Histogram/>
+                    <StatisticsTable />
                 </div>
             )
         }
