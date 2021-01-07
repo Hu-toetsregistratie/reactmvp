@@ -6,15 +6,15 @@ const IndividualStudentImage = (props) =>{
 
     const styles = {
         Circle: {
-            maxWidth: '120px',
-            maxHeight: '120px',
+            maxWidth: '100%',
+            maxHeight: '100%',
             height: 'auto',
             width: 'auto',
             borderRadius: '50%'
         },
         Container: {
-            maxWidth: '50%',
-            maxHeight: '50%',
+            maxWidth: '20%',
+            maxHeight: '20%',
             float: 'right'
         },
         Text:{
