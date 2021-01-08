@@ -1,16 +1,12 @@
 import React from 'react';
 
-import { Button } from '@instructure/ui-buttons';
-import { TextInput } from '@instructure/ui-text-input';
-
-
 class ToetsInvoeren extends React.Component {
     state = {
         selectOptions: [],
         toetscode: '',
         toetsnaam: '',
-        blok: '',
-        jaar: ''
+        blok: '1',
+        jaar: '1'
     }
 
     async componentDidMount() {
@@ -63,45 +59,28 @@ class ToetsInvoeren extends React.Component {
                 <form id="myForm" onSubmit={(e) => this.invoeren(e)}>
                     <div className="form">
                         <label htmlFor="toetscode">Toetscode: </label>
-                        <TextInput width="300px"
-                                   id="toetscode"
-                                   value={this.state.toetscode}
-                                   onChange={(event) => {
+                        <input id="toetscode" value={this.state.toetscode}
+                               onChange={(event) => {
                                    this.setState({toetscode: event.target.value})
                                }} required/>
                         <br/>
                         <label htmlFor="toetsnaam">Naam toets: </label>
-                        <TextInput width="300px"
-                                   id="toetsnaam"
-                                   value={this.state.toetsnaam}
-                                   onChange={(event) => {
+                        <input id="toetsnaam" value={this.state.toetsnaam}
+                               onChange={(event) => {
                                    this.setState({toetsnaam: event.target.value})
                                }} required/>
                         <br/>
                         <label htmlFor="blok-dropdown">Blok: </label>
-                        <select id="blok-dropdown"
-                                value={this.state.blok}
+                        <select id="blok-dropdown" value={this.state.blok}
                                 onChange={(event) => {
-                            this.setState({blok: event.target.value})
+                            this.setState({blok: event.target.value, jaar:event.target.value})
                         }} required>
                             {this.state.selectOptions.map(select => <option
-                                value={select.value} key={select.value}>{select.blok}</option>)}</select>
-                        <br/>
-                        <label htmlFor="jaar-dropdown">Jaar: </label>
-                        <select id="jaar-dropdown"
-                                value={this.state.jaar}
-                                onChange={(event) => {
-                            this.setState({jaar: event.target.value})
-                        }} required>
-                            {this.state.selectOptions.map(select => <option
-                                value={select.value} key={select.value}>{select.jaar}</option>)}</select>
+                                value={select.value} key={select.value}>Jaar {select.jaar} {select.blok}</option>)}</select>
                         <br/>
                         <br/>
                         <br/>
-                        <Button id="submit"
-                                type="submit"
-                                color="primary"
-                                margin="small"> Toevoegen</Button>
+                        <button id="submit" type="submit">Toevoegen</button>
                     </div>
                 </form>
             </div>
