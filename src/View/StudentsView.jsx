@@ -5,7 +5,7 @@ import {StudentsTable} from "../Components/StudentsTable";
 export function StudentsView() {
     return (
         <div className='content'>
-            <h1>Studenten</h1>
+            <h3>Voeg een student toe.</h3>
             <StudentInvoeren/>
             <StudentsTable />
         </div>

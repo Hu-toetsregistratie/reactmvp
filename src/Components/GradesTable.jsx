@@ -7,9 +7,11 @@ import {Spinner} from "@instructure/ui-spinner";
 const GradesTable = () => {
     const [loading, setLoading] = useState(false);
     const [cijfers, setCijfers] = useState([]);
+
     useEffect(() => {
         getCijfers();
     }, []);
+
     const getCijfers = async () => {
         setLoading(true);
         const response = await fetch("https://hu-toetsregistratie.nl/api/cijfer.json", {
@@ -24,17 +26,15 @@ const GradesTable = () => {
                 cijfers[i].voldoende = "Onvoldoende";
             }
         }
-
         setCijfers(cijfers)
         setLoading(false);
-        console.log(cijfers[0].student.voornaam)
-        console.log(cijfers[0].student.achternaam)
-        console.log(cijfers)
     };
+
     if (loading) {
         return <div style={{height:"20em",display:"flex",alignItems:"center",justifyContent:"center"}}><Spinner renderTitle="Loading" variant="inverse"
         /></div>
     }
+
     return (
         <div className={GradesTable}>
             <TablePages
