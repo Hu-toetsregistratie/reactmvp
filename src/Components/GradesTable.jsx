@@ -15,7 +15,7 @@ const GradesTable = () => {
     const getCijfers = async () => {
         setLoading(true);
         const response = await fetch("https://hu-toetsregistratie.nl/api/cijfer.json", {
-            headers : { "Authorization":("token 74b3873bb95d80d4218104d99468529fb40ff8bd\n")}});
+            headers : { "Authorization":("token 74b3873bb95d80d4218104d99468529fb40ff8bd")}});
         const cijfers = await response.json();
 
         for (let i=0; i<cijfers.length; i+=1){

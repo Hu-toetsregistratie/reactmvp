@@ -23,7 +23,8 @@ const StudentInvoeren = () => {
                 },
                 body: JSON.stringify(data)
             });
-            console.log(data)
+
+
         } catch (e) {
             console.log(e)
         }
@@ -33,10 +34,6 @@ const StudentInvoeren = () => {
         e.preventDefault()
         PostStudent();
     }
-    // @ Nikki
-    // Ik heb { Button, TextInput } van instructure toegevoegd aan jouw component.
-    // TODO: Als er op "Toevoegen" wordt gedrukt met lege velden dan verdwijnt de sidebar.
-    //  Ik denk dat we het beste team LeAn om hulp kunnen vragen hiervoor.
 
     return (
         <form id="myForm" onSubmit={invoeren}>
