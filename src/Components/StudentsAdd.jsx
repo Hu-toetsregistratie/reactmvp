@@ -2,6 +2,7 @@ import React from 'react';
 import { TextInput } from '@instructure/ui-text-input';
 import { Button } from '@instructure/ui-buttons';
 
+
 const StudentInvoeren = () => {
     async function PostStudent() {
         let selVoor = document.getElementById('voornaam').value;
@@ -15,14 +16,15 @@ const StudentInvoeren = () => {
         };
         try {
             await fetch('https://hu-toetsregistratie.nl/api/student/', {
-                    method: 'post',
-                    headers: {
-                        'Authorization': "token 74b3873bb95d80d4218104d99468529fb40ff8bd",
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data)
-                });
-console.log(data)
+                method: 'post',
+                headers: {
+                    'Authorization':("token 74b3873bb95d80d4218104d99468529fb40ff8bd"),
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            });
+
+
         } catch (e) {
             console.log(e)
         }
@@ -32,10 +34,6 @@ console.log(data)
         e.preventDefault()
         PostStudent();
     }
-    // @ Nikki
-    // Ik heb { Button, TextInput } van instructure toegevoegd aan jouw component.
-    // TODO: Als er op "Toevoegen" wordt gedrukt met lege velden dan verdwijnt de sidebar.
-    //  Ik denk dat we het beste team LeAn om hulp kunnen vragen hiervoor.
 
     return (
         <form id="myForm" onSubmit={invoeren}>
