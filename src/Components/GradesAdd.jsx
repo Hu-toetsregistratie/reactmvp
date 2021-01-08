@@ -54,20 +54,6 @@ class ResultaatInvoeren extends React.Component {
         this.setState({selectOptions: optionsBlok, selectOptionsA: optionsToets, selectOptionsB: optionsStudent})
     };
 
-    // async toets() {
-    //     const response = await fetch('https://hu-toetsregistratie.nl/api/toets.json');
-    //     const data = await response.json();
-    //
-    //     const options = data.map(function (entry) {
-    //         return {
-    //             value: entry.id,
-    //             toetscode: entry.toets_code,
-    //             toetsnaam: entry.toets_naam,
-    //         }
-    //     })
-    //     this.setState({selectOptions: options})
-    // };
-
     invoeren(e) {
         e.preventDefault()
         this.PostToets();

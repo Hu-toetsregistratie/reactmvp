@@ -78,13 +78,6 @@ class ToetsInvoeren extends React.Component {
                             {this.state.selectOptions.map(select => <option
                                 value={select.value} key={select.value}>Jaar {select.jaar} {select.blok}</option>)}</select>
                         <br/>
-                        {/*<label htmlFor="jaar-dropdown">Jaar: </label>*/}
-                        {/*<select id="jaar-dropdown" value={this.state.jaar} onChange={(event) => {*/}
-                        {/*    this.setState({jaar: event.target.value})*/}
-                        {/*}} required>*/}
-                        {/*    {this.state.selectOptions.map(select => <option*/}
-                        {/*        value={select.value} key={select.value}>{select.jaar}</option>)}</select>*/}
-                        <br/>
                         <br/>
                         <br/>
                         <button id="submit" type="submit">Toevoegen</button>
