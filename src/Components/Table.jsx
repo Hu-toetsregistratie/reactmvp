@@ -3,14 +3,11 @@ import {Table} from '@instructure/ui-table';
 import {Responsive} from '@instructure/ui-responsive';
 import {Alert} from '@instructure/ui-alerts';
 import { Pagination } from '@instructure/ui-pagination';
-import { Link } from 'react-router-dom'
-import {IconUserLine} from "@instructure/ui-icons";
 
-class SortTabel extends React.Component {
+class TableSort extends React.Component {
     constructor (props) {
-        super(props);
-        //this.state = { id_row: 0 };
-        //this.individualClick = this.individualClick.bind(this);
+        super(props)
+
         const { headers } = props
 
         this.state = {
@@ -33,13 +30,11 @@ class SortTabel extends React.Component {
             })
         }
     }
-    parentCallback(row_id){
-        this.setState({s_id:row_id})
-        console.log(row_id)
-    }
+
 
     render() {
-        const { caption, headers, rows,} = this.props
+        const { caption, headers, rows } = this.props
+
         const { sortBy, ascending } = this.state
         const direction = ascending ? 'ascending' : 'descending'
         const sortedRows = [...(rows || [])].sort((a, b) => {
@@ -56,6 +51,7 @@ class SortTabel extends React.Component {
             sortedRows.reverse()
         }
         return (
+
 
             <Responsive
                 query={{
@@ -89,21 +85,14 @@ class SortTabel extends React.Component {
                             </Table.Head>
                             <Table.Body>
                                 {sortedRows.map((row) => (
-                                    <Table.Row key={row.id}  onClick = {() => this.props.data.getIndividualRow(row.id)} >
 
+                                    <Table.Row key={row.id} >
                                         {headers.map(({ id, renderCell }) => (
                                             <Table.Cell key={id}>
-
                                                 {renderCell ? renderCell(row[id]) : row[id]}
-
-
                                             </Table.Cell>
-
                                         ))}
-
-
                                     </Table.Row>
-
                                 ))}
                             </Table.Body>
                         </Table>
@@ -114,14 +103,15 @@ class SortTabel extends React.Component {
                         >
                             {`Sorted by ${sortBy} in ${direction} order`}
                         </Alert>
-                    </div >
+                    </div>
                 )}
             </Responsive>
         )
     }
 }
-export {SortTabel}
-class PaginaTabel extends React.Component {
+
+
+class TablePages extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -153,7 +143,8 @@ class PaginaTabel extends React.Component {
 
         return (
             <div>
-                <SortTabel
+
+                <TableSort
                     caption={caption}
                     headers={headers}
                     rows={slicedRows}
@@ -161,7 +152,6 @@ class PaginaTabel extends React.Component {
                     sortBy={sortBy}
                     ascending={ascending}
                     rowIds={rows.map((row) => row.id)}
-
                 />
                 {pageCount > 1 && (
                     <Pagination
@@ -188,9 +178,8 @@ class PaginaTabel extends React.Component {
                 >
                     {`Table page ${page + 1} of ${pageCount}`}
                 </Alert>
-
             </div>
         )
     }
 }
-export {PaginaTabel};
+export {TablePages};

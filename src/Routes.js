@@ -1,27 +1,22 @@
 import React from "react";
-import { Route, Switch } from 'react-router-dom'
+import { Route } from 'react-router-dom';
 
-import {GradesTable} from "./Containers/GradesTable";
-import {StudentsTable} from "./Containers/StudentsTable"
-import {BarChartView} from "./Containers/BarChartView"
-import {IndividualStudentTable} from "./Containers/IndividualStudentTable";
-import {getIndividualData} from "./Containers/ClickStudent";
-import {Test} from './Components/Base/Test'
+import {StatisticsView} from "./View/StatisticsView";
+import {StudentsView} from "./View/StudentsView";
+import {GradesView} from "./View/GradesView";
+import {IndividualStudentView} from "./View/IndividualStudentView";
+import {Toets} from "./View/TestsView";
 
-const BaseRouter = () => (
-<div>
-   <Switch>
-    <Route Exact path='/GradesTable' component={GradesTable} />
-    <Route Exact path='/StudentsTable' component={StudentsTable} />
-    <Route Exact path='/BarChartView' component={BarChartView} />
-    <Route Exact path='/ClickStudent' component={getIndividualData} />
-    <Route Exact path='/IndividualStudentTable' component={IndividualStudentTable} />
-    <Route Exact path='/Test' component={Test} />
-   </Switch>
-   </div>
+import Home from "./View/Home";
 
+
+export const BaseRouter = () => (
+    <div>
+        <Route Exact path="/"  component={Home} />
+        <Route Exact path='/Resultaten' component={GradesView} />
+        <Route Exact path='/Studenten' component={StudentsView} />
+        <Route Exact path='/IndividueleStudent' component={IndividualStudentView} />
+        <Route Exact path='/Statistiek' component={StatisticsView} />
+        <Route Exact path='/Toetsen' component={Toets} />
+    </div>
 );
-
-
-
-export { BaseRouter };

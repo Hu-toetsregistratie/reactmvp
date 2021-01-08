@@ -1,0 +1,14 @@
+.Navbar a {
+    border-left: #3d3d3d 2px solid;
+    margin: 0 30px;
+    padding: 10px 5px;
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+    color: #28aeff;
+}
+
+.Navbar a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}

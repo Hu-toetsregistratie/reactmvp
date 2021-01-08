@@ -1,13 +1,13 @@
 import React from 'react';
 
-const IndividualStudentImage = ({ naam }) =>{
-
+const IndividualStudentImage = (props) =>{
+    console.log(props)
 
     const styles = {
         Circle: {
-            maxWidth: '100%',
-            maxHeight: '100%',
-            heigth: 'auto',
+            maxWidth: '120px',
+            maxHeight: '120px',
+            height: 'auto',
             width: 'auto',
             borderRadius: '50%'
         },
@@ -20,16 +20,16 @@ const IndividualStudentImage = ({ naam }) =>{
             paddingLeft:'35%',
             float: 'left'
         }
-
     };
-
     return(
 
         <div>
             <div style = {styles.Container} >
-                <img style={styles.Circle} src={'https://wallpaperplay.com/walls/full/1/5/0/212353.jpg'}/>
-                <h3 style={styles.Text} >{ naam }</h3>
+
+                <img alt="Student" style={styles.Circle} src={'https://images.pexels.com/photos/4855548/pexels-photo-4855548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}/>
+                <h3 style={styles.Text}>{props.name}</h3>
             </div>
+
         </div>
     );
 }
