@@ -1,4 +1,6 @@
 import React from 'react';
+import { TextInput } from '@instructure/ui-text-input';
+import { Button } from '@instructure/ui-buttons';
 
 class ToetsInvoeren extends React.Component {
     state = {
@@ -42,7 +44,7 @@ class ToetsInvoeren extends React.Component {
             await fetch('https://hu-toetsregistratie.nl/api/toets/', {
                 method: 'post',
                 headers: {
-                    // 'Authorization': "token 3ee90f9c89fbc67c1de8ced4d2bda1b2092cb95a",
+                    'Authorization':("token 74b3873bb95d80d4218104d99468529fb40ff8bd"),
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(data)
@@ -59,13 +61,19 @@ class ToetsInvoeren extends React.Component {
                 <form id="myForm" onSubmit={(e) => this.invoeren(e)}>
                     <div className="form">
                         <label htmlFor="toetscode">Toetscode: </label>
-                        <input id="toetscode" value={this.state.toetscode}
+                        <TextInput id="toetscode"
+                                   width="300px"
+                                   placeholder="Een getal van 7 cijfers // 7777777"
+                                   value={this.state.toetscode}
                                onChange={(event) => {
                                    this.setState({toetscode: event.target.value})
                                }} required/>
                         <br/>
                         <label htmlFor="toetsnaam">Naam toets: </label>
-                        <input id="toetsnaam" value={this.state.toetsnaam}
+                        <TextInput id="toetsnaam"
+                                   width="300px"
+                                   placeholder="Voorbeeld: 1"
+                                   value={this.state.toetsnaam}
                                onChange={(event) => {
                                    this.setState({toetsnaam: event.target.value})
                                }} required/>
@@ -80,7 +88,7 @@ class ToetsInvoeren extends React.Component {
                         <br/>
                         <br/>
                         <br/>
-                        <button id="submit" type="submit">Toevoegen</button>
+                        <Button color="primary" margin="small" id="submit" type="submit">Toevoegen</Button>
                     </div>
                 </form>
             </div>

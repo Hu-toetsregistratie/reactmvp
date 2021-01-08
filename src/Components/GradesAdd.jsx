@@ -1,4 +1,8 @@
 import React from 'react';
+import { TextInput } from '@instructure/ui-text-input';
+import { Button } from '@instructure/ui-buttons';
+
+
 
 class ResultaatInvoeren extends React.Component {
     state = {
@@ -123,13 +127,20 @@ class ResultaatInvoeren extends React.Component {
                         </select>
                         <br/>
                         <label htmlFor="datum">Datum van assessment: </label>
-                        <input type="date" id="datum" value={this.state.datum} onChange={(event) => {
+                        <TextInput type="date"
+                                   id="datum"
+                                   width="300px"
+                                   value={this.state.datum}
+                                   onChange={(event) => {
                             this.setState({datum: event.target.value})
                         }} required/>
                         <br/>
                         <br/>
                         <br/>
-                        <button id="submit" type="submit">Toevoegen</button>
+                        <Button id="submit"
+                                type="submit"
+                                color="primary"
+                                margin="small">Toevoegen</Button>
                     </div>
                 </form>
             </div>
