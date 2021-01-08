@@ -1,15 +1,14 @@
 import React, {useState, useEffect } from "react"
-import {ColumnsStudent} from "../Components/Columns";
-import {PaginaTabel} from '../Components/Tabel';
+import {ColumnsStudent} from "../Components/TableColumns";
+import {PaginaTabel} from '../Components/Table';
 import {Spinner} from "@instructure/ui-spinner";
-import {Link} from '@instructure/ui-link'
 import {IndividualRow} from "./ClickStudent";
 import {IconUserLine} from "@instructure/ui-icons";
 require("node-fetch");
 
 
 
- const StudentsView = () => {
+ const StudentsTable = () => {
 
     const [student, setStudent] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -39,7 +38,7 @@ require("node-fetch");
     }
 
         return (
-            <div className={StudentsView}>
+            <div className={StudentsTable}>
                 <PaginaTabel
                     caption="Studenten"
                     headers={ColumnsStudent}
@@ -49,7 +48,7 @@ require("node-fetch");
             </div>
         );
     }
-export {StudentsView};
+export {StudentsTable};
 
  //////////////////////////////////////////////Lazy Tabel loading//////////////////////////////////////////////////////
 /*

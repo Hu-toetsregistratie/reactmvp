@@ -31,14 +31,10 @@ export const ColumnsStudent = [
 
 ]
 export const ColumnsCijfers = [
-        {
-            id: 'voornaam',
-            text: 'Voornaam'
-        },
-        {
-            id: 'achternaam',
-            text: 'Achternaam'
-        },
+    {
+        id:'naamstudent',
+        text:'Naam'
+    },
     {
         id: 'blok',
         text: 'Blok'

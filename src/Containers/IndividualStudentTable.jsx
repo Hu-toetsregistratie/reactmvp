@@ -1,12 +1,12 @@
 import React, {useState,useEffect} from 'react';
 import {IndividualStudentImage} from "../Components/IndividualStudentImage";
-import {PaginaTabel} from "../Components/Tabel";
-import {ColumnsIndividual} from "../Components/Columns";
+import {PaginaTabel} from "../Components/Table";
+import {ColumnsIndividual} from "../Components/TableColumns";
 import {IndividualRow} from "./ClickStudent";
 
 
 
-const IndividualStudentView = () =>{
+const IndividualStudentTable = () =>{
 
     const styles = {
         ContainerTabel: {
@@ -41,7 +41,7 @@ const IndividualStudentView = () =>{
     },[]);
 
     return(
-      <div className={IndividualStudentView}>
+      <div className={IndividualStudentTable}>
           <IndividualStudentImage naam = {naam} />
           <div style={styles.ContainerTabel}>
               <PaginaTabel
@@ -55,4 +55,4 @@ const IndividualStudentView = () =>{
     );
 }
 
-export {IndividualStudentView}
+export {IndividualStudentTable}

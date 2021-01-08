@@ -1,11 +1,11 @@
 import React, {useState, useEffect } from "react"
-import {ColumnsCijfers} from "../Components/Columns";
-import { PaginaTabel } from "../Components/Tabel";
+import {ColumnsCijfers} from "../Components/TableColumns";
+import { PaginaTabel } from "../Components/Table";
 import {Spinner} from "@instructure/ui-spinner";
 
 
 
-const GradesView = () => {
+const GradesTable = () => {
     const [loading, setLoading] = useState(false);
     const [cijfers, setCijfers] = useState([]);
 
@@ -36,7 +36,7 @@ const GradesView = () => {
         /></div>
     }
     return (
-        <div className={GradesView}>
+        <div className={GradesTable}>
             <PaginaTabel
                 caption="Cijfers"
                 headers={ColumnsCijfers}
@@ -47,7 +47,7 @@ const GradesView = () => {
         </div>
     );
 }
-export {GradesView};
+export {GradesTable};
 
 
 ////////////////////////////////////////Lazy Loading uit probeersel ///////////////////////////////////////////

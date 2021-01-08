@@ -1,20 +1,22 @@
 import React from "react";
 import { Route, Switch } from 'react-router-dom'
 
-import {GradesView} from "./Containers/GradesView";
-import {StudentsView} from "./Containers/StudentsView"
+import {GradesTable} from "./Containers/GradesTable";
+import {StudentsTable} from "./Containers/StudentsTable"
 import {BarChartView} from "./Containers/BarChartView"
-import {IndividualStudentView} from "./Containers/IndividualStudentView";
+import {IndividualStudentTable} from "./Containers/IndividualStudentTable";
 import {getIndividualData} from "./Containers/ClickStudent";
+import {Test} from './Components/Base/Test'
 
 const BaseRouter = () => (
 <div>
    <Switch>
-    <Route Exact path='/GradesView' component={GradesView} />
-    <Route Exact path='/StudentsView' component={StudentsView} />
+    <Route Exact path='/GradesTable' component={GradesTable} />
+    <Route Exact path='/StudentsTable' component={StudentsTable} />
     <Route Exact path='/BarChartView' component={BarChartView} />
     <Route Exact path='/ClickStudent' component={getIndividualData} />
-    <Route Exact path='/IndividualStudentView' component={IndividualStudentView} />
+    <Route Exact path='/IndividualStudentTable' component={IndividualStudentTable} />
+    <Route Exact path='/Test' component={Test} />
    </Switch>
    </div>
 
