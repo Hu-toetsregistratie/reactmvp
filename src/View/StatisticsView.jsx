@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { ProgressCircle } from '@instructure/ui-progress'
 
 import {Histogram} from "../Components/Histogram";
+import {Spinner} from "@instructure/ui-spinner";
 
 export class StatisticsView extends Component {
     state = {
@@ -15,16 +15,9 @@ export class StatisticsView extends Component {
     render() {
 
         if (this.state.loading) {
-            return (
-            <div>
-                <ProgressCircle
-                size="small"
-                screenReaderLabel="Loading completion"
-                valueNow={100}
-                valueMax={100}
-                margin="0 small 0 0"
-                shouldAnimateOnMount/>
-            </div>)
+            return (<div style={{height:"20em",display:"flex",alignItems:"center",justifyContent:"center"}}>
+                        <Spinner renderTitle="Loading" variant="inverse"/>
+                </div>)
         } else {
             return (
                 <div>
