@@ -17,7 +17,7 @@ const StudentInvoeren = () => {
             await fetch('https://hu-toetsregistratie.nl/api/student/', {
                     method: 'post',
                     headers: {
-                        'Authorization': "token 3ee90f9c89fbc67c1de8ced4d2bda1b2092cb95a",
+                        'Authorization': "token 74b3873bb95d80d4218104d99468529fb40ff8bd",
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify(data)
