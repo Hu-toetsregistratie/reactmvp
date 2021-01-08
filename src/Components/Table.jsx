@@ -7,6 +7,7 @@ import { Pagination } from '@instructure/ui-pagination';
 class TableSort extends React.Component {
     constructor (props) {
         super(props)
+
         const { headers } = props
 
         this.state = {
@@ -30,8 +31,10 @@ class TableSort extends React.Component {
         }
     }
 
+
     render() {
         const { caption, headers, rows } = this.props
+
         const { sortBy, ascending } = this.state
         const direction = ascending ? 'ascending' : 'descending'
         const sortedRows = [...(rows || [])].sort((a, b) => {
@@ -48,6 +51,8 @@ class TableSort extends React.Component {
             sortedRows.reverse()
         }
         return (
+
+
             <Responsive
                 query={{
                     small: { maxWidth: '40rem' },
@@ -80,6 +85,7 @@ class TableSort extends React.Component {
                             </Table.Head>
                             <Table.Body>
                                 {sortedRows.map((row) => (
+
                                     <Table.Row key={row.id} >
                                         {headers.map(({ id, renderCell }) => (
                                             <Table.Cell key={id}>
@@ -103,6 +109,7 @@ class TableSort extends React.Component {
         )
     }
 }
+
 
 class TablePages extends React.Component {
     constructor(props) {
@@ -136,6 +143,7 @@ class TablePages extends React.Component {
 
         return (
             <div>
+
                 <TableSort
                     caption={caption}
                     headers={headers}

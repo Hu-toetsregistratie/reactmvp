@@ -3,7 +3,6 @@ import React from 'react';
 const IndividualStudentImage = (props) =>{
     console.log(props)
 
-
     const styles = {
         Circle: {
             maxWidth: '120px',
@@ -26,6 +25,7 @@ const IndividualStudentImage = (props) =>{
 
         <div>
             <div style = {styles.Container} >
+
                 <img alt="Student" style={styles.Circle} src={'https://images.pexels.com/photos/4855548/pexels-photo-4855548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}/>
                 <h3 style={styles.Text}>{props.name}</h3>
             </div>
