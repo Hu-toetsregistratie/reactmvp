@@ -8,7 +8,7 @@ import {Spinner} from "@instructure/ui-spinner";
 const GradesView = () => {
     const [loading, setLoading] = useState(false);
     const [cijfers, setCijfers] = useState([]);
-    const [student, setNaam] = useState({id:voornaam},[]);
+
     useEffect(() => {
         getCijfers();
     }, []);
@@ -24,15 +24,11 @@ const GradesView = () => {
             if (cijfers[i].voldoende === false){
                 cijfers[i].voldoende = 'onvoldoende';
             }
-            const {student:{voornaam, achternaam}} = cijfers[i]
-            const student = voornaam + ' ' + achternaam
-            setNaam(student)
+            cijfers[i].naamstudent = cijfers[i].student.voornaam + ' '+ cijfers[i].student.achternaam
         }
-        setNaam(student)
         setCijfers(cijfers)
         setLoading(false);
         console.log(cijfers)
-        console.log(student)
     };
 
     if (loading) {
@@ -44,7 +40,7 @@ const GradesView = () => {
             <PaginaTabel
                 caption="Cijfers"
                 headers={ColumnsCijfers}
-                rows ={student}
+                rows ={cijfers}
                 perPage={10}
             />
 
