@@ -25,14 +25,16 @@ const GradesTable = () => {
             if (!cijfers[i].voldoende){
                 cijfers[i].voldoende = "Onvoldoende";
             }
+            cijfers[i].naamstudent = cijfers[i].student.voornaam + ' '+ cijfers[i].student.achternaam
         }
         setCijfers(cijfers)
         setLoading(false);
     };
 
     if (loading) {
-        return <div style={{height:"20em",display:"flex",alignItems:"center",justifyContent:"center"}}><Spinner renderTitle="Loading" variant="inverse"
-        /></div>
+        return <div style={{height:"20em",display:"flex",alignItems:"center",justifyContent:"center"}}>
+            <Spinner renderTitle="Loading" variant="inverse"/>
+        </div>
     }
 
     return (

@@ -52,3 +52,23 @@ export const ColumnsCijfers = [
         text: "Toets datum"
     },
 ]
+
+export const ColumnsTests = [
+    {
+        id:'toets_naam',
+        text:'Toets naam'
+    },
+    {
+        id:'toets_code',
+        text:'Toets code'
+    },
+    {
+        id:'jaar',
+        text:'Jaar'
+    },
+    {
+        id: 'blok',
+        text: 'Blok'
+    },
+
+]
