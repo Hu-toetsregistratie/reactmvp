@@ -11,11 +11,8 @@ export const ColumnsIndividual = [
         id: "voldoende",
         text: "Resultaat"
     }
-
-
 ]
 export const ColumnsStudent = [
-
     {
         id: "voornaam",
         text: "Voornaam"
@@ -28,24 +25,19 @@ export const ColumnsStudent = [
         id: "student_nummer",
         text: "Student nummer"
     }
-
 ]
 export const ColumnsCijfers = [
     {
         id: "toets_naam",
         text: "Toets naam"
     },
+      {
+        id: "naamstudent",
+        text: "Naam student"
+    },
     {
         id: "voldoende",
         text: "Voldoende"
-    },
-    {
-        id: "student[2]",
-        text: "Voornaam student"
-    },
-    {
-        id: "student.achternaam",
-        text: "Achternaam student"
     },
     {
         id: "toets_code",
@@ -59,4 +51,24 @@ export const ColumnsCijfers = [
         id: "datum_toets",
         text: "Toets datum"
     },
+]
+
+export const ColumnsTests = [
+    {
+        id:'toets_naam',
+        text:'Toets naam'
+    },
+    {
+        id:'toets_code',
+        text:'Toets code'
+    },
+    {
+        id:'jaar',
+        text:'Jaar'
+    },
+    {
+        id: 'blok',
+        text: 'Blok'
+    },
+
 ]

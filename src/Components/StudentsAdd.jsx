@@ -1,21 +1,9 @@
 import React from 'react';
+import { TextInput } from '@instructure/ui-text-input';
+import { Button } from '@instructure/ui-buttons';
 
 
 const StudentInvoeren = () => {
-    // const [voornaam, setVoornaam] = useState('');
-    // const [achternaam, setAchternaam] = useState('');
-    //
-    // const updateVoornaam = e => {
-    //     setVoornaam(e.target.value)
-    // }
-    // const updateAchternaam = e => {
-    //     setAchternaam(e.target.value)
-    // }
-
-    // function lala(e) {
-    //     e.preventDefault()
-    // };
-
     async function PostStudent() {
         let selVoor = document.getElementById('voornaam').value;
         let selAchter = document.getElementById('achternaam').value;
@@ -28,14 +16,15 @@ const StudentInvoeren = () => {
         };
         try {
             await fetch('https://hu-toetsregistratie.nl/api/student/', {
-                    method: 'post',
-                    headers: {
-                        'Authorization': "token 3ee90f9c89fbc67c1de8ced4d2bda1b2092cb95a",
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data)
-                });
-console.log(data)
+                method: 'post',
+                headers: {
+                    'Authorization':("token 74b3873bb95d80d4218104d99468529fb40ff8bd"),
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            });
+
+
         } catch (e) {
             console.log(e)
         }
@@ -50,17 +39,32 @@ console.log(data)
         <form id="myForm" onSubmit={invoeren}>
             <div className="form">
                 <label htmlFor="voornaam">Voornaam: </label>
-                <input id="voornaam" name="voornaam" type="text" required/>
+                <TextInput id="voornaam"
+                           name="voornaam"
+                           width="300px"
+                           type="text" required
+                           placeholder="Bas"/>
                 <br/>
                 <label htmlFor="achternaam">Achternaam: </label>
-                <input id="achternaam" name="achternaam" type="text" required/>
+                <TextInput id="achternaam"
+                           name="achternaam"
+                           width="300px"
+                           type="text" required
+                           placeholder="van Houten"/>
                 <br/>
                 <label htmlFor="nummer">Studentnummer: </label>
-                <input id="nummer" name="student_nummer" type="number" required/>
-                <br/>
-                <br/>
-                <br/>
-                <button id="submit" type="submit">Toevoegen</button>
+                <TextInput id="nummer"
+                           name="student_nummer"
+                           width="300px"
+                           type="number" required
+                           placeholder="1234567"/>
+            <br/>
+                <Button
+                    id="submit"
+                    type="submit"
+                    color="primary"
+                    margin="small"> Toevoegen
+                </Button>
             </div>
         </form>
     );

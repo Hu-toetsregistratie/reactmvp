@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Bar } from 'react-chartjs-2';
+import {Spinner} from "@instructure/ui-spinner";
 
 
 
@@ -8,6 +9,7 @@ export class Histogram extends Component {
         chartData: {},
         chartOptions: {},
         data: [],
+        loading: true
     };
 
     async componentDidMount() {
@@ -74,12 +76,17 @@ export class Histogram extends Component {
                                 beginAtZero: true,
                                 min: 0,}}]}
                 },
+            loading: false
             }
         );
     }
 
 
     render() {
+        if (this.state.loading) {
+            return <div style={{height:"20em",display:"flex",alignItems:"center",justifyContent:"center"}}><Spinner renderTitle="Loading" variant="inverse"
+            /></div>
+        }
         const HistogramStyle = {
            maxWidth: '600px',
         }

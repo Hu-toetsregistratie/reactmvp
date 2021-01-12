@@ -1,9 +1,8 @@
 import React, {useState,useEffect} from 'react';
-import {IndividualStudentImage} from "../Components/IndividualStudentImage";
-import {TablePages} from "../Components/Table";
-import {ColumnsIndividual} from "../Components/TableColumns";
+import {TablePages} from "./Table";
+import {ColumnsIndividual} from "./TableColumns";
 
-const IndividualStudentView = () =>{
+export const IndividualStudentTable = () =>{
     const styles ={
         ContainerTabel: {
             maxWidth: '50%',
@@ -36,19 +35,17 @@ const IndividualStudentView = () =>{
     },[]);
 
     return(
-      <div className={IndividualStudentView}>
-          <IndividualStudentImage name={name}/>
-          <h2>Behaalde resultaten van de student.</h2>
-          <div style={styles.ContainerTabel}>
-              <TablePages
-                  caption='Student Individueel'
-                  headers={ColumnsIndividual}
-                  rows={Individual}
-                  perPage={5}
-              />
-          </div>
-      </div>
+        <div className={IndividualStudentTable}>
+            <h2>Behaalde resultaten van de student.</h2>
+            <div style={styles.ContainerTabel}>
+                <TablePages
+                    caption='Student Individueel'
+                    headers={ColumnsIndividual}
+                    rows={Individual}
+                    perPage={5}
+                />
+            </div>
+        </div>
     );
 }
 
-export {IndividualStudentView}
