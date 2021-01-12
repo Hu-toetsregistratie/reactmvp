@@ -1,9 +1,6 @@
 import React from 'react';
 
 const IndividualStudentImage = (props) =>{
-    console.log(props)
-
-
     const styles = {
         Circle: {
             maxWidth: '120px',
