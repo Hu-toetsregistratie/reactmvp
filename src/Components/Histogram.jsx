@@ -23,13 +23,25 @@ export class Histogram extends Component {
         const testsPassedColors = []
         const testsFailedColors = []
 
+        // Graph displays 18 different tests so we need 18 different zeros
+        // This is far from ideal but it was the best solution I had back then...
         const testsPassed = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
         const testsFailed = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
-        // Get all the unique values for toets_naam:
+        // Gets all the unique values for the toets_naam key from the api-call:
         let testsUnique = [...new Set(d.map(test => test.toets_naam))];
+
+        // @WHAT:
+        // Creates a new list for every unique value for toets_naam.
+        // Also adds a new value in the testsPassedColors and testsFailedColors lists' for every unique value of toets_naam.
+        // @WHY:
+        // We want the names of the tests to be a string and not an integer.
+        // The values in the api are in integer formar (so 1,2,3, etc.)
+        // We want "toets 1, toets 2, toets 3, ...' etc.
         testsUnique.forEach((testName) => {
             testNames.push(`Toets ${testName}`);
+
+            // adds a color value for each unique element (= each unique test)
             testsPassedColors.push('rgba(54, 162, 235, 0.2)')
             testsFailedColors.push('rgba(255, 99, 132, 0.2)')
         })
@@ -40,11 +52,12 @@ export class Histogram extends Component {
             let loc = id-1;
             // eslint-disable-next-line array-callback-return
             d.map((test) => {
+                // this loop counts all the passed and failed grades into the two arrays testsPassed and testsFailed
                 if (test.toets_naam === id && test.voldoende) {
-                    testsPassed[loc] += 1;
+                    testsPassed[loc] += 1;      // if voldoende=true, add 1 to the position [i] in the array testsPassed
 
                 } else if (test.toets_naam === id && !test.voldoende) {
-                    testsFailed[loc] +=  1;
+                    testsFailed[loc] +=  1;      // if voldoende=false, add 1 to the position [i] in the array testsFailed
                 }
             })
         })
