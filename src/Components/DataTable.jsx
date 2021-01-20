@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Table } from "@instructure/ui-table";
 import { Flex } from "@instructure/ui-flex";
 

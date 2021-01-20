@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import {TablePages} from "./Table";
 import {ColumnsIndividual} from "./TableColumns";
+import {IndividualStudentImage} from "./IndividualStudentImage";
 
 export const IndividualStudentTable = () =>{
     const styles ={
@@ -11,11 +12,13 @@ export const IndividualStudentTable = () =>{
     }
     const [name, setName] = useState([])
     const [Individual, setIndividual] = useState([]);
+
     const fetchIndividual = async () => {
         const res = await fetch('https://hu-toetsregistratie.nl/api/cijfer.json/?student__id=1',{
             headers: {'Authorization': ('token 74b3873bb95d80d4218104d99468529fb40ff8bd')}} )
         const Individual = await res.json();
-        console.log(Individual);
+        const name = Individual[1].student.voornaam + ' ' + Individual[1].student.achternaam;
+
         for (let i=0; i<Individual.length; i+=1){
             if (Individual[i].voldoende){
                 Individual[i].voldoende = 'Voldoende';
@@ -24,10 +27,9 @@ export const IndividualStudentTable = () =>{
                 Individual[i].voldoende = 'Onvoldoende';
             }
         }
-        const name = Individual[1].student.voornaam + ' ' + Individual[1].student.achternaam;
+
 
         setName(name);
-
         setIndividual(Individual);
     }
     useEffect(()=>{
@@ -36,7 +38,8 @@ export const IndividualStudentTable = () =>{
 
     return(
         <div className={IndividualStudentTable}>
-            <h2>Behaalde resultaten van de student.</h2>
+            <IndividualStudentImage name={name}/>
+            <h2>Behaalde resultaten van {name}.</h2>
             <div style={styles.ContainerTabel}>
                 <TablePages
                     caption='Student Individueel'

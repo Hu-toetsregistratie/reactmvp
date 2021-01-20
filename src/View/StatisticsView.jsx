@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import {StatisticsHistogram} from "../Components/StatisticsHistogram";
-import {GetTestResults} from "../Components/StatisticsGetTestData";
+// import {GetTestResults} from "../Components/StatisticsGetTestData";
 
 import {Spinner} from "@instructure/ui-spinner";
 
@@ -23,7 +23,7 @@ export class StatisticsView extends Component {
         } else {
             return (
                 <div>
-                    <GetTestResults testName='3' />
+                    {/*<GetTestResults testName='3' />*/}
                     <StatisticsHistogram/>
                 </div>
             )

@@ -1,4 +1,6 @@
 import React from 'react';
+import { Img } from '@instructure/ui-img'
+
 
 const IndividualStudentImage = (props) =>{
     const styles = {
@@ -12,7 +14,6 @@ const IndividualStudentImage = (props) =>{
         Container: {
             maxWidth: '20%',
             maxHeight: '20%',
-            float: 'right'
         },
         Text:{
             paddingLeft:'35%',
@@ -23,7 +24,7 @@ const IndividualStudentImage = (props) =>{
 
         <div>
             <div style = {styles.Container} >
-                <img alt="Student" style={styles.Circle} src={'https://images.pexels.com/photos/4855548/pexels-photo-4855548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}/>
+                <Img alt="Student" style={styles.Circle} src={'https://images.pexels.com/photos/4855548/pexels-photo-4855548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}/>
                 <h3 style={styles.Text}>{props.name}</h3>
             </div>
 

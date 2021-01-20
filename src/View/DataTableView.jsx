@@ -8,7 +8,7 @@ export function DataTableView() {
     // @WHAT: searchColumns, setSearchColumns
     // @WHY: Allows us to define through which columns the user can query speeding up search processes for specific queries.
     // @ALTERNATIVES: Not using it. Right now the user is able to search every column.
-    const [searchColumns, setSearchColumns] = useState(["", ""])
+    // const [searchColumns, setSearchColumns] = useState(["", ""])
 
     // @WHAT: useCallBack() function
     // @WHY: reading https://dmitripavlutin.com/dont-overuse-react-usecallback/
@@ -33,14 +33,10 @@ export function DataTableView() {
         );
     }
 
-    return <div>
-
-        <div>
-            <input type="text" value={query} onChange={(e) => setQuery(e.target.value)} />
-        </div>
-
-        <div> <DataTable data={Search(data)}/></div>
-    </div>
+    return (<div>
+                <div> <input type="text" value={query} onChange={(e) => setQuery(e.target.value)} /></div>
+                <div> <DataTable data={Search(data)}/></div>
+    </div>)
 }
 
 // @WHAT: React.memo(), a memoizing method in reactjs

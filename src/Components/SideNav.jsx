@@ -9,6 +9,9 @@ export function SideNav() {
         <div style={navStyle} className="Navbar">
             <nav className='side-nav'>
                 <Link to="/">Home</Link>
+
+                <Link to="/DataTable">TESTING</Link>
+
                 <Link to="/Studenten">Studenten</Link>
                 <Link to="/Resultaten">Resultaten</Link>
                 <Link to="/Toetsen">Toetsen</Link>
