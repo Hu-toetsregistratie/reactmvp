@@ -4,7 +4,7 @@ import {Spinner} from "@instructure/ui-spinner";
 
 
 
-export class Histogram extends Component {
+export class StatisticsHistogram extends Component {
     state = {
         chartData: {},
         chartOptions: {},

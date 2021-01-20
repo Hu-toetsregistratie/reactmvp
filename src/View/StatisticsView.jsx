@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 
-import {Histogram} from "../Components/Histogram";
+import {StatisticsHistogram} from "../Components/StatisticsHistogram";
+import {GetTestResults} from "../Components/StatisticsGetTestData";
+
 import {Spinner} from "@instructure/ui-spinner";
 
 export class StatisticsView extends Component {
@@ -21,7 +23,8 @@ export class StatisticsView extends Component {
         } else {
             return (
                 <div>
-                    <Histogram/>
+                    <GetTestResults testName='3' />
+                    <StatisticsHistogram/>
                 </div>
             )
         }
